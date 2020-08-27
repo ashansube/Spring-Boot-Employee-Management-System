@@ -16,4 +16,9 @@ public class VisaAdminController {
 		return "visa/visa_dashboard";
 	}
 	
+	@RequestMapping("/admin/visa-pendingstudents")
+	public String VisaPendingStudent() {
+		return "visa/visa_pending_student";
+	}
+	
 }
