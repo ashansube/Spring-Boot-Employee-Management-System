@@ -1,17 +1,16 @@
 package com.graymatter.demo.student.model;
 
-import javax.annotation.Generated;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class FoundationStudent {
+public class visastudent {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int foun_id;
+	private int visa_std_id;
 	
 	private String NIC;
 	private String name_with_ini;
@@ -19,11 +18,11 @@ public class FoundationStudent {
 	private String address;
 	private String Phone_Num;
 	private String email;
-	public int getFoun_id() {
-		return foun_id;
+	public int getVisa_std_id() {
+		return visa_std_id;
 	}
-	public void setFoun_id(int foun_id) {
-		this.foun_id = foun_id;
+	public void setVisa_std_id(int visa_std_id) {
+		this.visa_std_id = visa_std_id;
 	}
 	public String getNIC() {
 		return NIC;
@@ -63,7 +62,7 @@ public class FoundationStudent {
 	}
 	@Override
 	public String toString() {
-		return "FoundationStudent [foun_id=" + foun_id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini
+		return "visastudent [visa_std_id=" + visa_std_id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini
 				+ ", fullName=" + fullName + ", address=" + address + ", Phone_Num=" + Phone_Num + ", email=" + email
 				+ "]";
 	}
