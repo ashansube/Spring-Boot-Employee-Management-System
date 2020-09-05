@@ -11,7 +11,3 @@ public class JeewaEducationApplication {
 	}
 
 }
-
-//State Change
-//edit
-//new Change
