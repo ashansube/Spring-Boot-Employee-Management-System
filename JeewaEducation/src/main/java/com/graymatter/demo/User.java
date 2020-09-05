@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class User {
 
-	/*addd*/
+	/*add new change*/
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
