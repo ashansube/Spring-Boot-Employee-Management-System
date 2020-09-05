@@ -101,13 +101,6 @@ public class PendingStudent {
 				+ ", parent=" + parent + "]";
 	}
 	
-	/*FUCK YOU Ashan*/
-	
-
-	
-
-
-
 	
 }
 
