@@ -1,12 +1,19 @@
 package com.graymatter.demo.student.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
+import com.graymatter.demo.visa.model.PendingForVisa;
+
 
 @Entity
-public class visastudent {
+public class VisaStudent {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,6 +25,7 @@ public class visastudent {
 	private String address;
 	private String Phone_Num;
 	private String email;
+	
 	public int getVisa_std_id() {
 		return visa_std_id;
 	}
@@ -62,10 +70,10 @@ public class visastudent {
 	}
 	@Override
 	public String toString() {
-		return "visastudent [visa_std_id=" + visa_std_id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini
+		return "VisaStudent [visa_std_id=" + visa_std_id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini
 				+ ", fullName=" + fullName + ", address=" + address + ", Phone_Num=" + Phone_Num + ", email=" + email
 				+ "]";
 	}
-	
+
 	
 }

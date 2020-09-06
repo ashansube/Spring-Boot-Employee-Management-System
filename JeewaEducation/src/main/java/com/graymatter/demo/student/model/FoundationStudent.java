@@ -1,10 +1,18 @@
 package com.graymatter.demo.student.model;
 
+import java.util.List;
+
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import com.graymatter.demo.payment.model.FoundationBatchPayment;
+import com.graymatter.demo.payment.model.VisaPayment;
 
 @Entity
 public class FoundationStudent {
@@ -19,6 +27,18 @@ public class FoundationStudent {
 	private String address;
 	private String Phone_Num;
 	private String email;
+	
+
+	@OneToMany(targetEntity = FoundationBatchPayment.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "st_id_fk", referencedColumnName = "foun_id")
+	private List<FoundationBatchPayment> batch_pay;
+	
+	public List<FoundationBatchPayment> getBatch_pay() {
+		return batch_pay;
+	}
+	public void setBatch_pay(List<FoundationBatchPayment> batch_pay) {
+		this.batch_pay = batch_pay;
+	}
 	public int getFoun_id() {
 		return foun_id;
 	}
@@ -65,8 +85,9 @@ public class FoundationStudent {
 	public String toString() {
 		return "FoundationStudent [foun_id=" + foun_id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini
 				+ ", fullName=" + fullName + ", address=" + address + ", Phone_Num=" + Phone_Num + ", email=" + email
-				+ "]";
+				+ ", batch_pay=" + batch_pay + "]";
 	}
+	
 	
 	
 }

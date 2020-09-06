@@ -1,9 +1,17 @@
 package com.graymatter.demo.lecture.model;
 
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+
+import java.util.*;
+
+import antlr.collections.List;
 
 @Entity
 public class Teaching_Experience {
@@ -16,6 +24,8 @@ public class Teaching_Experience {
 	private String Level_Taught;
 	private String No_Of_Years;
 	
+	
+
 	
 	public int getTeachingExperience_ID() {
 		return TeachingExperience_ID;
@@ -41,13 +51,16 @@ public class Teaching_Experience {
 	public void setNo_Of_Years(String no_Of_Years) {
 		No_Of_Years = no_Of_Years;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Teaching_Experience [TeachingExperience_ID=" + TeachingExperience_ID + ", W_Subject=" + W_Subject
 				+ ", Level_Taught=" + Level_Taught + ", No_Of_Years=" + No_Of_Years + "]";
 	}
+	
+	
+	
+	
+
 	
 	
 }

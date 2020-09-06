@@ -67,7 +67,7 @@ public class VisaPayment {
 	@Override
 	public String toString() {
 		return "VisaPayment [Visa_Payment_ID=" + Visa_Payment_ID + ", Student_Name=" + Student_Name
-				+ ", Deposited_Amount=" + Deposited_Amount + ", Date=" + Date + ", Bank=" + Bank + ", Branch=" + Branch
+				+ ", FoundationBatchPaymentDeposited_Amount=" + Deposited_Amount + ", Date=" + Date + ", Bank=" + Bank + ", Branch=" + Branch
 				+ ", Payment_Slip=" + Payment_Slip + "]";
 	}
 	

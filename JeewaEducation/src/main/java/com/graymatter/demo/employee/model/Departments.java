@@ -1,9 +1,14 @@
 package com.graymatter.demo.employee.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Departments {
@@ -17,7 +22,19 @@ public class Departments {
 	private String Department_EntentionNo;
 	private String Department_Phone_No;
 	
+
+	@OneToMany(targetEntity = Employee.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "dip_id", referencedColumnName = "Department_ID")
+	private List<Employee> employee;
 	
+	
+	
+	public List<Employee> getEmployee() {
+		return employee;
+	}
+	public void setEmployee(List<Employee> employee) {
+		this.employee = employee;
+	}
 	public int getDepartment_ID() {
 		return Department_ID;
 	}
@@ -54,7 +71,7 @@ public class Departments {
 	public String toString() {
 		return "Departments [Department_ID=" + Department_ID + ", Department_Name=" + Department_Name
 				+ ", Department_Email=" + Department_Email + ", Department_EntentionNo=" + Department_EntentionNo
-				+ ", Department_Phone_No=" + Department_Phone_No + "]";
+				+ ", Department_Phone_No=" + Department_Phone_No + ", employee=" + employee + "]";
 	}
 	
 

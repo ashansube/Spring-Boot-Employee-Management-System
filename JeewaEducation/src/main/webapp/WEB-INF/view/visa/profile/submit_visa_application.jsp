@@ -2,55 +2,110 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta charset="utf-8">
+
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>VISA admin Dashboard</title>
+  <title>Employee Admin - Admin Profile</title>
 
-  <!-- Custom fonts for this template-->
+  <!-- Custom fonts for this template -->
   <link href="../../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-  <!-- Custom styles for this template-->
+  <!-- Custom styles for this template -->
   <link href="../../static/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+  <link href="../../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
-<body>
- <!-- Page Wrapper -->
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
   <div id="wrapper">
 
-        <!-- Content Wrapper -->
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">JeewaEducation</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>My VISA Section</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Home</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>About</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Contact Us</span></a>
+      </li>
+
+     
+
+
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
       <div id="content">
-
-        <!-- Topbar -->
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+ 
+         <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-            <i class="fa fa-bars"></i>
-          </button>
+          <form class="form-inline">
+            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+              <i class="fa fa-bars"></i>
+            </button>
+          </form>
 
-          <!-- Topbar Search 
+          <!-- Topbar Search -->
           <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
             <div class="input-group">
               <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
               <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
+                <button class="btn btn-danger" type="button">
                   <i class="fas fa-search fa-sm"></i>
                 </button>
               </div>
             </div>
-          </form> -->
-
-          <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Jeewa Higher Education Centre</div>
-
+          </form>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -212,118 +267,171 @@
 
           </ul>
 
-        </nav>
-        <!-- End of Topbar -->
+         </nav>
 
+                
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">My VISA Section</h1>
-
-          <div class="row">
-
-            
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number of student in institute</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+            <!-- Page Heading -->
+            <h1 class="h3 mb-2 text-gray-800">Submit VISA Application Form Details</h1>
+           
+            <form class="was-validated" action="submitvisa" method="post">
+  
+        
+  
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationTooltip01">First name</label>
+                  <input type="text" class="form-control" id="fname" placeholder="First name"   required>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationTooltip02">Last name</label>
+                  <input type="text" class="form-control" id="lname" placeholder="Last name"  required>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="validationTooltip02">Other name</label>
+                  <input type="text" class="form-control" id="other_name" placeholder="Last name"  required>
+                  <div class="valid-tooltip">
+                    Looks good!
+                  </div>
+                </div>
+                
+              </div>
+  
+              <div class="form-row">
+                  <div class="col-md-6 mb-3 mt-3">
+                      <label for="validationTooltipUsername">Personal Email for VISA Process</label>
+                      <div class="input-group">
+                        <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"  placeholder="student@gmail.com" aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                          Please Enter Valid Email.
+                        </div>
+                      </div>
                     </div>
-                    
+              </div>
+                  
+              <div class="form-row">
+  
+                  <div class="col-md-6 mb-3 mt-3">
+                      <label for="validationTooltipUsername">Gender</label>
+                      <div class="input-group">
+  
+                          <select class="custom-select" id="sex"  required>
+                              <option value="">Select the Gender</option>
+                              <option value="1" >Male</option>
+                              <option value="2">Female</option>
+                              <option value="3">Other</option>
+                            </select>
+                      </div>
+                    </div>
+  
+                    <div class="col-md-6 mb-3 mt-3">
+                      <label for="validationTooltipUsername">Select Date Of Birth</label>
+                      <div class="input-group">
+                        <input type="date" class="form-control" id="dob" aria-describedby="validationTooltipUsernamePrepend" required>
+                        <div class="invalid-tooltip">
+                          Please Slect Date Of Birth.
+                        </div>
+                      </div>
+                    </div>
+  
+              </div>
+  
+              <label for="validationTooltip03 mt-1">Place Of Birth</label>
+  
+              <div class="form-row ">
+                <div class="col-md-6 mb-3">
+                  <input type="text" class="form-control" id="city" placeholder="City" required>
+                  <div class="invalid-tooltip">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3 ">
+                  <input type="text" class="form-control" id="state" placeholder="State"  required>
+                  <div class="invalid-tooltip">
+                    Please provide a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3 mb-3 ">
+                  <input type="text" class="form-control" id="zip" placeholder="Zip"  required>
+                  <div class="invalid-tooltip">
+                    Please provide a valid zip.
                   </div>
                 </div>
               </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-success shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Pending Students</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">200</div>
+  
+              <div class="form-row">
+  
+                  <div class="col-md-6 mb-2 mt-3">
+                      <label for="validationTooltipUsername">Current Martial Status</label>
+                      <div class="input-group">
+  
+                          <select class="custom-select" id="current_martial_status" name="marrage" required>
+                              <option value="">Select Current Martial Status</option>
+                              <option value="1">Married</option>
+                              <option value="2">Engaged</option>
+                              <option value="3">Not-Married</option>
+                            </select>
+                      </div>
                     </div>
-                  </div>
-                </div>
+  
+                    <div class="col-md-6 mb-2 mt-3">
+                      <label for="validationTooltip01">Country Of Current Residence</label>
+                      <input type="text" class="form-control" id="country_of_current_resident" placeholder="Country Name" required>
               </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-info shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total VISA verified Students</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">100</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-calendar fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
+  
+              <button class="btn btn-primary mt-4" type="submit" id="updateText">Submit</button>
+              <button class="btn btn-secondary mt-4 ml-4" type="reset" id="cancel" >Reset</button>
+            </form>
           </div>
 
 
-        </div>
-        <!-- /.container-fluid -->
-
-      </div>
-      <!-- End of Main Content -->
-
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
-
-    </div>
-    <!-- End of Content Wrapper -->
-
-  </div>
-  <!-- End of Page Wrapper -->
-
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
-<script src="../../static/admin/vendor/jquery/jquery.min.js"></script>
-  <script src="../../static/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
+                    </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
+     
+
+            </div>
+            </div>
+
+
+        </div>        
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js" crossorigin="anonymous"></script>
+
+        <script src="../../static/admin/js/admin_profile_image_btn.js"></script>
+
+  <!-- Bootstrap core JavaScript-->
+		  <script src="../../static/admin/vendor/jquery/jquery.min.js"></script>
+  		<script src="../../static/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
   <!-- Core plugin JavaScript-->
-  <script src="../../static/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+ 		 <script src="../../static/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="../../static/admin/js/sb-admin-2.min.js"></script>
-</body>
+  		<script src="../../static/admin/js/sb-admin-2.min.js"></script>
+
+
+
+    </body>
 </html>

@@ -1,9 +1,14 @@
 package com.graymatter.demo.lecture.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Subject {
@@ -16,7 +21,16 @@ public class Subject {
 	private String Lesson;
 	private String Course_Material;
 	
+	@OneToMany(targetEntity = PermanentLecturer.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "subid_fk", referencedColumnName = "Subject_ID")
+	private List<PermanentLecturer> permenent_lec;
 	
+	public List<PermanentLecturer> getPermenent_lec() {
+		return permenent_lec;
+	}
+	public void setPermenent_lec(List<PermanentLecturer> permenent_lec) {
+		this.permenent_lec = permenent_lec;
+	}
 	public int getSubject_ID() {
 		return Subject_ID;
 	}
@@ -41,13 +55,14 @@ public class Subject {
 	public void setCourse_Material(String course_Material) {
 		Course_Material = course_Material;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "Subject [Subject_ID=" + Subject_ID + ", Subject_Name=" + Subject_Name + ", Lesson=" + Lesson
-				+ ", Course_Material=" + Course_Material + "]";
+				+ ", Course_Material=" + Course_Material + ", permenent_lec=" + permenent_lec + "]";
 	}
+	
+	
+	
 		
 
 }

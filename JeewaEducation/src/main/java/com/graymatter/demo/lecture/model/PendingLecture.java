@@ -1,16 +1,21 @@
 package com.graymatter.demo.lecture.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class PendingLecture {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	private int pendingLecturer_ID;
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int pendinglecturerid;
 	
 	private String Full_Name;
 	private String Name_Initial;
@@ -20,12 +25,24 @@ public class PendingLecture {
 	private String Mobile_No;
 	private String NIC;
 	
+	@OneToMany(targetEntity = WorkingExperience.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "lid_fk", referencedColumnName = "pendinglecturerid")
+	private List<WorkingExperience> workingEx;
 	
-	public int getPendingLecturer_ID() {
-		return pendingLecturer_ID;
+	@OneToMany(targetEntity = Teaching_Experience.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "lid_fk", referencedColumnName = "pendinglecturerid")
+	private List<Teaching_Experience> teaching_ex;
+	
+
+	@OneToMany(targetEntity = EducationalBackground.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "lid_fk", referencedColumnName = "pendinglecturerid")
+	private List<EducationalBackground> edu_ex;
+	
+	public int getPendinglecturerid() {
+		return pendinglecturerid;
 	}
-	public void setPendingLecturer_ID(int pendingLecturer_ID) {
-		this.pendingLecturer_ID = pendingLecturer_ID;
+	public void setPendinglecturerid(int pendinglecturerid) {
+		this.pendinglecturerid = pendinglecturerid;
 	}
 	public String getFull_Name() {
 		return Full_Name;
@@ -69,13 +86,15 @@ public class PendingLecture {
 	public void setNIC(String nIC) {
 		NIC = nIC;
 	}
-	
 	@Override
 	public String toString() {
-		return "PendingLecture [pendingLecturer_ID=" + pendingLecturer_ID + ", Full_Name=" + Full_Name
-				+ ", Name_Initial=" + Name_Initial + ", Address=" + Address + ", Email=" + Email + ", Gender=" + Gender
-				+ ", Mobile_No=" + Mobile_No + ", NIC=" + NIC + "]";
+		return "PendingLecture [pendinglecturerid=" + pendinglecturerid + ", Full_Name=" + Full_Name + ", Name_Initial="
+				+ Name_Initial + ", Address=" + Address + ", Email=" + Email + ", Gender=" + Gender + ", Mobile_No="
+				+ Mobile_No + ", NIC=" + NIC + "]";
 	}
+	
+	
+
 	
 	
 	
