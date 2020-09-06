@@ -276,14 +276,14 @@
             <!-- Page Heading -->
             <h1 class="h3 mb-2 text-gray-800">Submit VISA Application Form Details</h1>
            
-            <form class="was-validated" action="submitvisa" method="post">
+            <form class="was-validated" action="pendingvisa" method="post">
   
         
   
               <div class="form-row">
                 <div class="col-md-4 mb-3">
                   <label for="validationTooltip01">First name</label>
-                  <input type="text" class="form-control" id="fname" placeholder="First name"   required>
+                  <input type="text" class="form-control" name="fname" id="fname" placeholder="First name"   required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>

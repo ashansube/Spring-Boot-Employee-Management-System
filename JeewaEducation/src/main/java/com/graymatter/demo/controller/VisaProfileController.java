@@ -23,7 +23,7 @@ public class VisaProfileController {
 		return "visa/profile/visaprofile_03";
 	}
 	
-	@GetMapping("submitvisaapplication")
+	@GetMapping("/profile/submitvisaapplication")
 	public String visaapplicationsubmit() {
 		return "visa/profile/submit_visa_application";
 	}

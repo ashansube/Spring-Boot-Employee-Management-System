@@ -1,26 +1,26 @@
-package com.graymatter.demo;
+package com.graymatter.demo.model;
 
-/*fdfdsadasd*/
-
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Student {
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
+	private long id;
 	
-	private String name;
+	@Column(name = "name")
+	private String name;	
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -34,7 +34,7 @@ public class Student {
 
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + "]";
+		return "User [id=" + id + ", name=" + name + "]";
 	}
 	
 	
