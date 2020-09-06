@@ -16,5 +16,42 @@ public class Event {
 	private String Venue;
 	private String Date;
 	private String Time;
+	public int getEvent_id() {
+		return event_id;
+	}
+	public void setEvent_id(int event_id) {
+		this.event_id = event_id;
+	}
+	public String getEventName() {
+		return EventName;
+	}
+	public void setEventName(String eventName) {
+		EventName = eventName;
+	}
+	public String getVenue() {
+		return Venue;
+	}
+	public void setVenue(String venue) {
+		Venue = venue;
+	}
+	public String getDate() {
+		return Date;
+	}
+	public void setDate(String date) {
+		Date = date;
+	}
+	public String getTime() {
+		return Time;
+	}
+	public void setTime(String time) {
+		Time = time;
+	}
+	@Override
+	public String toString() {
+		return "Event [event_id=" + event_id + ", EventName=" + EventName + ", Venue=" + Venue + ", Date=" + Date
+				+ ", Time=" + Time + "]";
+	}
+	
+	
 
 }
