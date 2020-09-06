@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
 <head>
 
     <meta charset="utf-8">
@@ -10,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>View Pending Students</title>
+    <title>View Foundation Students</title>
 
     <!-- Custom fonts for this template -->
     <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -218,7 +217,7 @@
                                     <div class="font-weight-bold">
                                         <div class="text-truncate">Hi there! I am wondering if you can help me with a
                                             problem I've been having.</div>
-                                        <div class="small text-gray-500">Emily Fowler Â· 58m</div>
+                                        <div class="small text-gray-500">Emily Fowler · 58m</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -230,7 +229,7 @@
                                     <div>
                                         <div class="text-truncate">I have the photos that you ordered last month, how
                                             would you like them sent to you?</div>
-                                        <div class="small text-gray-500">Jae Chun Â· 1d</div>
+                                        <div class="small text-gray-500">Jae Chun · 1d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -242,7 +241,7 @@
                                     <div>
                                         <div class="text-truncate">Last month's report looks great, I am very happy with
                                             the progress so far, keep up the good work!</div>
-                                        <div class="small text-gray-500">Morgan Alvarez Â· 2d</div>
+                                        <div class="small text-gray-500">Morgan Alvarez · 2d</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -254,7 +253,7 @@
                                     <div>
                                         <div class="text-truncate">Am I a good boy? The reason I ask is because someone
                                             told me that people say this to all dogs, even if they aren't good...</div>
-                                        <div class="small text-gray-500">Chicken the Dog Â· 2w</div>
+                                        <div class="small text-gray-500">Chicken the Dog · 2w</div>
                                     </div>
                                 </a>
                                 <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
@@ -304,9 +303,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800" id="pending_stu_update_text">View Pending Student Details</h1>
+                    <h1 class="h3 mb-2 text-gray-800" id="pending_stu_update_text">View Foundation Student</h1>
                     <br>
-                    <h3>Personal Details</h3>
+
                     <br>
 
                     <form class="was-validated">
@@ -314,7 +313,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="validationTooltip01">Name with Initials</label>
                                 <input type="text" class="form-control" id="pending_Stu_name_initials"
-                                    placeholder="Name with Initials" readonly="readonly" required>
+                                    placeholder=".................." readonly="readonly" required>
                                 <div class="invalid-tooltip">
                                     Please enter your name with initials.
                                 </div>
@@ -325,7 +324,7 @@
                             <div class="col-md-6 mb-3">
                                 <label for="validationTooltip02">Full name</label>
                                 <input type="text" class="form-control" id="pending_stu_fullName"
-                                    placeholder="Full name" readonly="readonly" required>
+                                    placeholder="full name..........." readonly="readonly" required>
                                 <div class="invalid-tooltip">
                                     Please enter your full name.
                                 </div>
@@ -344,7 +343,7 @@
                                         <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                                     </div>
                                     <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                                        class="form-control" id="pending_stu_email" placeholder="Email"
+                                        class="form-control" id="pending_stu_email" placeholder="example@gmail.com"
                                         aria-describedby="validationTooltipUsernamePrepend" readonly="readonly"
                                         required>
                                     <div class="invalid-tooltip">
@@ -357,9 +356,9 @@
                             </div>
 
                             <div class="col-md-6 mb-3 mt-4">
-                                <label for="validationTooltip02">Address</label>
-                                <input type="text" class="form-control" id="pending_stu_address" placeholder="Address"
-                                    readonly="readonly" required>
+                                <label for="validationTooltip02">Home Address</label>
+                                <input type="text" class="form-control" id="pending_stu_address"
+                                    placeholder="address........" readonly="readonly" required>
                                 <div class="invalid-tooltip">
                                     Please enter Address.
                                 </div>
@@ -373,8 +372,8 @@
                         <div class="form-row">
                             <div class="col-md-6 mb-3 mt-4">
                                 <label for="validationTooltip03">School</label>
-                                <input type="text" class="form-control" id="pending_stu_school" placeholder="School"
-                                    readonly="readonly" required>
+                                <input type="text" class="form-control" id="pending_stu_school"
+                                    placeholder="school......." readonly="readonly" required>
                                 <div class="invalid-tooltip">
                                     Please provide a valid school.
                                 </div>
@@ -416,231 +415,24 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
-                        <br>
-
-                        <form class="was-validated">
-                            <h3>Parent Details</h3>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip01">Father Name</label>
-                                    <input type="text" class="form-control" id="fou_Stu_father_name"
-                                        placeholder="father name" readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter your father name.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Father NIC</label>
-                                    <input type="text" class="form-control" id="fou_stu_father_nic" placeholder="NIC"
-                                        readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter your full name.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div><br>
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Father Occupation</label>
-                                    <input type="text" class="form-control" id="fou_stu_father_occu"
-                                        placeholder="Occupation" readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter occupation.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <br>
-                            <br>
-
-
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip01">Mother Name</label>
-                                    <input type="text" class="form-control" id="fou_Stu_mother_name"
-                                        placeholder="mother name" readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter your mother name.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Mother NIC</label>
-                                    <input type="text" class="form-control" id="fou_stu_mother_nic" placeholder="NIC"
-                                        readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter your full name.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div><br>
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Mother Occupation</label>
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu"
-                                        placeholder="Occupation" readonly="readonly" required>
-                                    <div class="invalid-tooltip">
-                                        Please enter occupation.
-                                    </div>
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-
-                            </div>
-                        </form>
-                        <br>
-                        <br>
-                        <br>
 
 
 
-                        <form class="was-validated">
-                            <h3>Education Qualification</h3><br>
-                            <h5>O/L Results</h5><br>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject1</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject2</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject3</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject4</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject5</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject6</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject7</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject8</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject9</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-
-                            <h5>A/L Results</h5><br>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject1</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject2</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col-md-6 mb-3">
-                                    <label for="validationTooltip02">Subject3</label>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" id="fou_stu_mother_occu" placeholder="grade"
-                                        readonly="readonly" required>
-                                </div>
-                            </div>
-
-                        </form>
-
-                        <button class="btn btn-primary mt-4" type="submit" id="pendingstu_sendto_foundation"
-                            onclick="viewPendingStudentUpdate_btn()">Sent To Foundation</button>
 
 
-                        <button class="btn btn-primary mt-5" type="submit" id="pendingstu_sendto_visa"
-                            onclick="viewPendingStudentUpdate_btn()">Sent To visa</button>
+
+
+                        <button class="btn btn-primary mt-4" type="submit" id="pending_stu_view_btn_text"
+                            onclick="viewPendingStudentUpdate_btn()">Update</button>
+                        <button class="btn btn-secondary mt-4" type="submit" id="pending_stu_cancel_edit"
+                            hidden>Cancel</button>
                     </form>
+
+
+
+
+
+
 
 
 
@@ -685,7 +477,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">Ã—</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
@@ -697,7 +489,7 @@
         </div>
     </div>
 
-     <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript-->
   <script src="../static/admin/vendor/jquery/jquery.min.js"></script>
   <script src="../static/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -706,11 +498,11 @@
 
   <!-- Custom scripts for all pages-->
   <script src="../static/admin/js/sb-admin-2.min.js"></script>
-    
 
-
+<script src="../static/admin/js/view.js"></script>
 
 
 
 </body>
+
 </html>
