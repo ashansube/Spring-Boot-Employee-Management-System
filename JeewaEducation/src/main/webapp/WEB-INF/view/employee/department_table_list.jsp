@@ -3,13 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="utf-8">
+
+  <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Tables</title>
+  <title>Employee Admin - Departments List</title>
 
   <!-- Custom fonts for this template -->
   <link href="../static/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -20,7 +21,9 @@
 
   <!-- Custom styles for this page -->
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
+
 <body id="page-top">
 
   <!-- Page Wrapper -->
@@ -34,7 +37,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Employee Admin</div>
       </a>
 
       <!-- Divider -->
@@ -52,85 +55,78 @@
 
       <!-- Heading -->
       <div class="sidebar-heading">
-        Interface
+        Employees
       </div>
 
-      <!-- Nav Item - Pages Collapse Menu -->
+
+      <!-- Nav Item -Employees List -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Components</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Components:</h6>
-            <a class="collapse-item" href="buttons.html">Buttons</a>
-            <a class="collapse-item" href="cards.html">Cards</a>
-          </div>
-        </div>
+        <a class="nav-link" href="employees_table.html">
+          <i class="fas fa-list"></i>
+          <span>Employee List</span></a>
       </li>
 
-      <!-- Nav Item - Utilities Collapse Menu -->
+      <!-- Nav Item -Add Employees -->
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Utilities</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Custom Utilities:</h6>
-            <a class="collapse-item" href="utilities-color.html">Colors</a>
-            <a class="collapse-item" href="utilities-border.html">Borders</a>
-            <a class="collapse-item" href="utilities-animation.html">Animations</a>
-            <a class="collapse-item" href="utilities-other.html">Other</a>
-          </div>
-        </div>
+        <a class="nav-link" href="add_employee.html">
+          <i class="fas fa fa-plus"></i>
+          <span>Add Employee</span></a>
       </li>
 
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Addons
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Login Screens:</h6>
-            <a class="collapse-item" href="login.html">Login</a>
-            <a class="collapse-item" href="register.html">Register</a>
-            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-            <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Other Pages:</h6>
-            <a class="collapse-item" href="404.html">404 Page</a>
-            <a class="collapse-item" href="blank.html">Blank Page</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-
-      <!-- Nav Item - Tables -->
-      <li class="nav-item active">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
 
       <!-- Divider -->
       <hr class="sidebar-divider d-none d-md-block">
+
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Departments
+                  </div>
+            
+            
+                  <!-- Nav Item -Department List -->
+                  <li class="nav-item active">
+                    <a class="nav-link" href="departments_table.html">
+                      <i class="fas fa-list"></i>
+                      <span>Departments List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Department -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="add_department.html">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Department</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
+
+                  <!-- Heading -->
+                  <div class="sidebar-heading">
+                    Branches
+                  </div>
+            
+            
+                  <!-- Nav Item -Branches List -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="branches_table.html">
+                      <i class="fas fa-list"></i>
+                      <span>Branches List</span></a>
+                  </li>
+            
+                  <!-- Nav Item -Add Branch -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="add_branch.html">
+                      <i class="fas fa fa-plus"></i>
+                      <span>Add Branch</span></a>
+                  </li>
+            
+            
+                  <!-- Divider -->
+                  <hr class="sidebar-divider d-none d-md-block">
+
+
+
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
@@ -335,13 +331,12 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-          <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+          <h1 class="h3 mb-2 text-gray-800">All The Departments List</h1>
 
-          <!-- DataTales Example -->
+          <!-- DataTales Employee List -->
           <div class="card shadow mb-4">
             <div class="card-header py-3">
-              <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+              <h6 class="m-0 font-weight-bold text-primary">All Departments</h6>
             </div>
             <div class="card-body">
               <div class="table-responsive">
@@ -352,7 +347,7 @@
                       <th>Position</th>
                       <th>Office</th>
                       <th>Age</th>
-                      <th>Start date</th>
+                      <th>Start</th>
                       <th>Salary</th>
                       <th>Edit</th>
                       <th>Delete</th>
@@ -364,7 +359,7 @@
                       <th>Position</th>
                       <th>Office</th>
                       <th>Age</th>
-                      <th>Start date</th>
+                      <th>Start</th>
                       <th>Salary</th>
                       <th>Edit</th>
                       <th>Delete</th>
@@ -380,7 +375,7 @@
                       <td>$320,800</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
                                 <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
+                                <i class="far fa-edit"></i>
                                 </span>
                                 <span class="text">Edit</span>
                            </a>     
@@ -401,11 +396,11 @@
                       <td>2011/07/25</td>
                       <td>$170,750</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>    
+                        <span class="icon text-white-50">
+                        <i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                          </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -423,11 +418,11 @@
                       <td>2009/01/12</td>
                       <td>$86,000</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                            <span class="icon text-white-50">
+                            <i class="far fa-edit"></i>
+                            </span>
+                            <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -445,11 +440,11 @@
                       <td>2012/03/29</td>
                       <td>$433,060</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                        <span class="icon text-white-50">
+                        <i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -467,11 +462,11 @@
                       <td>2008/11/28</td>
                       <td>$162,700</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                        <span class="icon text-white-50">
+                        <i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -489,11 +484,11 @@
                       <td>2012/12/02</td>
                       <td>$372,000</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                        <span class="icon text-white-50">
+                        <i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -511,11 +506,11 @@
                       <td>2012/08/06</td>
                       <td>$137,500</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                        <span class="icon text-white-50">
+                        <i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
@@ -533,11 +528,11 @@
                       <td>2010/10/14</td>
                       <td>$327,900</td>
                       <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-plus"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>
+                        <span class="icon text-white-50">
+                        <i i class="far fa-edit"></i>
+                        </span>
+                        <span class="text">Edit</span>
+                        </a>     
                     </td>
                     <td> <a href="#" class="btn btn-danger btn-icon-split">
                                 <span class="icon text-white-50">
