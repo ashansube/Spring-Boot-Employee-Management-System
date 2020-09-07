@@ -290,14 +290,14 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="validationTooltip02">Last name</label>
-                  <input type="text" class="form-control" id="lname" placeholder="Last name"  required>
+                  <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name"  required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="validationTooltip02">Other name</label>
-                  <input type="text" class="form-control" id="other_name" placeholder="Last name"  required>
+                  <input type="text" class="form-control" id="other_name" name="other" placeholder="Last name"  required>
                   <div class="valid-tooltip">
                     Looks good!
                   </div>
@@ -309,7 +309,7 @@
                   <div class="col-md-6 mb-3 mt-3">
                       <label for="validationTooltipUsername">Personal Email for VISA Process</label>
                       <div class="input-group">
-                        <input type="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"  placeholder="student@gmail.com" aria-describedby="validationTooltipUsernamePrepend" required>
+                        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control"  placeholder="student@gmail.com" aria-describedby="validationTooltipUsernamePrepend" required>
                         <div class="invalid-tooltip">
                           Please Enter Valid Email.
                         </div>
@@ -323,7 +323,7 @@
                       <label for="validationTooltipUsername">Gender</label>
                       <div class="input-group">
   
-                          <select class="custom-select" id="sex"  required>
+                          <select class="custom-select" id="sex" name="gender" required>
                               <option value="">Select the Gender</option>
                               <option value="1" >Male</option>
                               <option value="2">Female</option>
@@ -335,7 +335,7 @@
                     <div class="col-md-6 mb-3 mt-3">
                       <label for="validationTooltipUsername">Select Date Of Birth</label>
                       <div class="input-group">
-                        <input type="date" class="form-control" id="dob" aria-describedby="validationTooltipUsernamePrepend" required>
+                        <input type="date" class="form-control" name="dob" id="dob" aria-describedby="validationTooltipUsernamePrepend" required>
                         <div class="invalid-tooltip">
                           Please Slect Date Of Birth.
                         </div>
@@ -348,19 +348,19 @@
   
               <div class="form-row ">
                 <div class="col-md-6 mb-3">
-                  <input type="text" class="form-control" id="city" placeholder="City" required>
+                  <input type="text" class="form-control" name="city" id="city" placeholder="City" required>
                   <div class="invalid-tooltip">
                     Please provide a valid city.
                   </div>
                 </div>
                 <div class="col-md-3 mb-3 ">
-                  <input type="text" class="form-control" id="state" placeholder="State"  required>
+                  <input type="text" class="form-control" name="state" id="state" placeholder="State"  required>
                   <div class="invalid-tooltip">
                     Please provide a valid state.
                   </div>
                 </div>
                 <div class="col-md-3 mb-3 ">
-                  <input type="text" class="form-control" id="zip" placeholder="Zip"  required>
+                  <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip"  required>
                   <div class="invalid-tooltip">
                     Please provide a valid zip.
                   </div>
@@ -373,7 +373,7 @@
                       <label for="validationTooltipUsername">Current Martial Status</label>
                       <div class="input-group">
   
-                          <select class="custom-select" id="current_martial_status" name="marrage" required>
+                          <select class="custom-select" name="marrage" id="current_martial_status" name="marrage" required>
                               <option value="">Select Current Martial Status</option>
                               <option value="1">Married</option>
                               <option value="2">Engaged</option>
@@ -384,7 +384,7 @@
   
                     <div class="col-md-6 mb-2 mt-3">
                       <label for="validationTooltip01">Country Of Current Residence</label>
-                      <input type="text" class="form-control" id="country_of_current_resident" placeholder="Country Name" required>
+                      <input type="text" name="country" class="form-control" id="country_of_current_resident" placeholder="Country Name" required>
               </div>
   
               <button class="btn btn-primary mt-4" type="submit" id="updateText">Submit</button>
