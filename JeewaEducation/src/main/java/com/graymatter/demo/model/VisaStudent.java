@@ -16,7 +16,7 @@ public class VisaStudent {
 	private String fullname;
 	private String address;
 	private int phonenum;
-	private String enail;
+	private String email;
 	private String uni;
 	private String age;
 	private String course;
@@ -83,19 +83,19 @@ public class VisaStudent {
 	public void setPhonenum(int phonenum) {
 		this.phonenum = phonenum;
 	}
-	public String getEnail() {
-		return enail;
+	public String getEmail() {
+		return email;
 	}
-	public void setEnail(String enail) {
-		this.enail = enail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	@Override
 	public String toString() {
 		return "VisaStudent [id=" + id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini + ", fullname=" + fullname
-				+ ", address=" + address + ", phonenum=" + phonenum + ", enail=" + enail + ", uni=" + uni + ", age="
+				+ ", address=" + address + ", phonenum=" + phonenum + ", email=" + email + ", uni=" + uni + ", age="
 				+ age + ", course=" + course + ", sex=" + sex + "]";
 	}
-	
-	
+
+
 	
 }
