@@ -20,4 +20,6 @@ public class PendingForVisaController {
 		return "visa/profile/submit_visa_application";
 	}
 	
+	
+	
 }

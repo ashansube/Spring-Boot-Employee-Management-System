@@ -39,7 +39,7 @@
 								<div class="form-row">
 									<div class="form-holder form-holder-1">
 										<label class="form-row-inner">
-											<input type="text" class="form-control" id="first-name" name="first-name"
+											<input type="text" class="form-control" id="first-name" name="namewithinitials"
 												required>
 											<span class="label">Name With Initials</span>
 											<span class="border"></span>
@@ -72,7 +72,7 @@
 								<div class="form-row">
 									<div class="form-holder form-holder-2">
 										<label class="form-row-inner">
-											<input type="text" class="form-control" id="code" name="code" required>
+											<input type="text" class="form-control" id="code" name="nic" required>
 											<span class="label">NIC</span>
 											<span class="border"></span>
 										</label>

@@ -15,7 +15,7 @@ public class PendingStudents {
 	private String NameWithInitials;
 	private String FullName;
 	private String HomeAddress;
-	private String NIC;
+	private String nic;
 	private String DegreeProgram;
 	private String TelHome;
 	private String TelMobile;
@@ -51,12 +51,7 @@ public class PendingStudents {
 	public void setHomeAddress(String homeAddress) {
 		HomeAddress = homeAddress;
 	}
-	public String getNIC() {
-		return NIC;
-	}
-	public void setNIC(String nIC) {
-		NIC = nIC;
-	}
+
 	public String getDegreeProgram() {
 		return DegreeProgram;
 	}
@@ -111,15 +106,21 @@ public class PendingStudents {
 	public void setMotherOccupation(String motherOccupation) {
 		MotherOccupation = motherOccupation;
 	}
+	public String getNic() {
+		return nic;
+	}
+	public void setNic(String nic) {
+		this.nic = nic;
+	}
 	@Override
 	public String toString() {
 		return "PendingStudents [pending_id=" + pending_id + ", NameWithInitials=" + NameWithInitials + ", FullName="
-				+ FullName + ", HomeAddress=" + HomeAddress + ", NIC=" + NIC + ", DegreeProgram=" + DegreeProgram
+				+ FullName + ", HomeAddress=" + HomeAddress + ", nic=" + nic + ", DegreeProgram=" + DegreeProgram
 				+ ", TelHome=" + TelHome + ", TelMobile=" + TelMobile + ", FatherName=" + FatherName + ", FatherNIC="
 				+ FatherNIC + ", FatherOccupation=" + FatherOccupation + ", MotherName=" + MotherName + ", MotherNIC="
 				+ MotherNIC + ", MotherOccupation=" + MotherOccupation + "]";
 	}
-	
+
 	
 
 	
