@@ -17,6 +17,36 @@ public class VisaStudent {
 	private String address;
 	private int phonenum;
 	private String enail;
+	private String uni;
+	private String age;
+	private String course;
+	private String sex;
+	
+	
+	public String getUni() {
+		return uni;
+	}
+	public void setUni(String uni) {
+		this.uni = uni;
+	}
+	public String getAge() {
+		return age;
+	}
+	public void setAge(String age) {
+		this.age = age;
+	}
+	public String getCourse() {
+		return course;
+	}
+	public void setCourse(String course) {
+		this.course = course;
+	}
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	public long getId() {
 		return id;
 	}
@@ -62,7 +92,8 @@ public class VisaStudent {
 	@Override
 	public String toString() {
 		return "VisaStudent [id=" + id + ", NIC=" + NIC + ", name_with_ini=" + name_with_ini + ", fullname=" + fullname
-				+ ", address=" + address + ", phonenum=" + phonenum + ", enail=" + enail + "]";
+				+ ", address=" + address + ", phonenum=" + phonenum + ", enail=" + enail + ", uni=" + uni + ", age="
+				+ age + ", course=" + course + ", sex=" + sex + "]";
 	}
 	
 	
