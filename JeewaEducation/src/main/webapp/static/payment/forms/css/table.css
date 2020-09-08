@@ -1,0 +1,35 @@
+
+table{
+	margin-top:35px;
+	width:85%;	
+}	
+th{
+	text-align: left;
+	background-color: #A0A0A0;
+	color: white;
+}
+table,th,td{
+	border: 2px solid #606060;
+	border-collapse: collapse;
+}
+th, td{
+	padding:5px;	
+}
+td{
+	font-size:14px;
+}
+input[type="file"]{
+	width:30%;
+	margin-top:10px;
+	margin-left:0px;
+	background-color:yellow;
+	padding:5px;
+}
+.btn-file {
+	position: relative;
+	overflow: hidden;
+}
+#img-upload{
+	width: 40%;
+	height: 20%;
+}
