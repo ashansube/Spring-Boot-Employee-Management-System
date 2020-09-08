@@ -1,25 +1,37 @@
 package com.graymatter.demo.controller;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
+import com.graymatter.demo.service.EmployeeService;
 
 @Controller
 public class EmployeeAdminController {
+	
+	@Autowired
+	private EmployeeService employeeService;
+	
+	@GetMapping("/admin/employee-datatable")
+	public String employeeDataTable(Model model) {
+		model.addAttribute("listEmployees",employeeService.getAllEmployees());
+		return "employee/employee_table_list";
+	}
+	
 	
 	@GetMapping("/admin/employee-dashboard")
 	public String employeeDash() {
 		return "employee/employee_admin_dashboard";
 	}
 	
-	@GetMapping("/admin/employee-datatable")
-	public String employeeDataTable() {
-		return "employee/employee_table_list";
-	}
-	
+
 	@GetMapping("/admin/employee-addEmp")
-	public String employeeAdd() {
+	public String employeeAdminAdd() {
 		return "employee/employee_add";
 	}
+	
 	
 	@GetMapping("/admin/employee-department-table")
 	public String departmentDataTable() {

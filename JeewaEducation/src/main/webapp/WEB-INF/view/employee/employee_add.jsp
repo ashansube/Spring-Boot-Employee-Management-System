@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -334,11 +336,11 @@
           <h1 class="h3 mb-2 text-gray-800">Add Employee</h1>
           <br>
 
-          <form class="was-validated">
+          <form class="was-validated" action="employee" method="POST">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">First name</label>
-                <input type="text" class="form-control" id="normal_emp_add_fname" placeholder="First name" required>
+                <input type="text" class="form-control" name="firstName" placeholder="First name" required>
                 <div class="invalid-tooltip">
                   Please enter first-name.
                 </div>
@@ -348,7 +350,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Last name</label>
-                <input type="text" class="form-control" id="normal_emp_add_lname" placeholder="Last name" required>
+                <input type="text" class="form-control" name="lastName" placeholder="Last name" required>
                 <div class="invalid-tooltip">
                   Please enter last-name.
                 </div>
@@ -366,7 +368,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="normal_emp_add_email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" name="email" placeholder="Email" aria-describedby="validationTooltipUsernamePrepend" required>
                   <div class="invalid-tooltip">
                     Please enter valid email.
                   </div>
@@ -378,11 +380,11 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipGender">Gender</label>
-                  <select class="custom-select" id="normal_emp_add_gender" required>
+                  <select class="custom-select" name="gender" required>
                     <option value="">Choose...</option>
-                    <option value="1">Male</option>
-                    <option value="2">Female</option>
-                    <option value="3">Other</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Your Gender.
@@ -397,7 +399,7 @@
             <div class="form-row">
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltip03">Address</label>
-                <input type="text" class="form-control" id="normal_emp_add_address" placeholder="Address" required>
+                <input type="text" class="form-control" name="address" placeholder="Address" required>
                 <div class="invalid-tooltip">
                   Please provide Valid Address.
                 </div>
@@ -407,7 +409,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip04">NIC</label>
-                <input type="text" class="form-control" id="normal_emp_add_nic" placeholder="NIC" required>
+                <input type="text" class="form-control" name="nic" placeholder="NIC" required>
                 <div class="invalid-tooltip">
                   Please provide Valid NIC.
                 </div>
@@ -417,7 +419,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip05">Mobile Number</label>
-                <input type="text" class="form-control" id="normal_emp_add_mobileNo" placeholder="Mobile Number" required>
+                <input type="text" class="form-control" name="mobileNo" placeholder="Mobile Number" required>
                 <div class="invalid-tooltip">
                   Please provide Mobile Number.
                 </div>
@@ -428,11 +430,11 @@
 
               <div class="col-md-6 mb-4 mt-4">
                 <label for="validationTooltipDesignation">Designation / Position</label>
-                  <select class="custom-select" id="normal_emp_add_designation" required>
+                  <select class="custom-select" name="designation" required>
                     <option value="">Choose...</option>
-                    <option value ="1">Manager</option>
-                    <option value="2">Reception</option>
-                    <option value="3">Web Manager</option>
+                    <option value ="Manager">Manager</option>
+                    <option value="Reception">Reception</option>
+                    <option value="Web Manager">Web Manager</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Valid Designation.
@@ -444,7 +446,7 @@
 
               <div class="col-md-3 mb-4 mt-4">
                 <label for="validationTooltip05">Birth Date</label>
-                <input type="date" class="form-control" id="normal_emp_add_birthDate" placeholder="Birth Date" required>
+                <input type="date" class="form-control" name="birthday" placeholder="Birth Date" required>
                 <div class="invalid-tooltip">
                   Please provide Birth Date.
                 </div>
@@ -455,7 +457,7 @@
 
               <div class="col-md-3 mb-4 mt-4">
                 <label for="validationTooltip05">Joined Date</label>
-                <input type="date" class="form-control" id="normal_emp_add_joinedDate" placeholder="Joined Date" required>
+                <input type="date" class="form-control" name="joinedDate" placeholder="Joined Date" required>
                 <div class="invalid-tooltip">
                   Please provide Joined Date.
                 </div>
@@ -466,12 +468,12 @@
 
               <div class="col-md-6 mb-4 mt-4">
                 <label for="validationTooltipDesignation">Branch</label>
-                  <select class="custom-select" id="normal_emp_add_branch" required>
+                  <select class="custom-select" name="branch">
                     <option value="">Choose...</option>
-                    <option value ="1">Kandy</option>
-                    <option value="2">Colombo</option>
-                    <option value="3">Kurunagala</option>
-                    <option value="3">Matara</option>
+                    <option value ="Kandy">Kandy</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Kurunagala">Kurunagala</option>
+                    <option value="Matara">Matara</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Valid Branch.
@@ -483,12 +485,12 @@
 
                 <div class="col-md-6 mb-4 mt-4">
                   <label for="validationTooltipDesignation">Department</label>
-                    <select class="custom-select" id="normal_emp_add_department" required>
+                    <select class="custom-select" id="normal_emp_add_department">
                       <option value="">Choose...</option>
-                      <option value ="1">Marketing</option>
-                      <option value="2">Accounting and Finance</option>
-                      <option value="3">Human Resource Management</option>
-                      <option value="3">Research and Development</option>
+                      <option value ="Marketing">Marketing</option>
+                      <option value="Accounting and Finance">Accounting and Finance</option>
+                      <option value="Human Resource Management">Human Resource Management</option>
+                      <option value="Research and Development">Research and Development</option>
                     </select>
                       <div class="invalid-tooltip">
                         Please Select Valid Department.
@@ -504,7 +506,7 @@
               <div class="form-row">
                 <div class="col-md-6 mb-5 mt-4">
                   <label for="validationTooltip03">Current Password</label>
-                  <input type="password" class="form-control" id="normal_emp_add_current_password" placeholder="Current Password" required>
+                  <input type="password" class="form-control" name="password" placeholder="Current Password" required>
                   <div class="invalid-tooltip">
                     Please Enter Current Password.
                   </div>
@@ -512,30 +514,9 @@
                     Looks good!
                   </div>
                 </div>
+             </div>   
 
-                <div class="col-md-3 mb-5 mt-4">
-                  <label for="validationTooltip04">New Password</label>
-                  <input type="password" class="form-control" id="normal_emp_add_new_password" placeholder="New Password" required>
-                  <div class="invalid-tooltip">
-                    Please Enter New Passsword.
-                  </div>
-                  <div class="valid-tooltip">
-                    Looks good!
-                  </div>
-                </div>
 
-                <div class="col-md-3 mb-5 mt-4">
-                  <label for="validationTooltip05">Confirm New Password</label>
-                  <input type="password" class="form-control" id="normal_emp_add_confirm_new_password" placeholder="Confirm New Password" required>
-                  <div class="invalid-tooltip">
-                    Please Confirm New Password.
-                  </div>
-                  <div class="valid-tooltip">
-                    Looks good!
-                  </div>
-                </div>
-              </div>
-            </div>
             <button class="btn btn-primary mt-4 mb-4" type="submit">Add Employee</button>
             <button class="btn btn-secondary mt-4 mb-4" type="submit">Cancel</button>
           </form>

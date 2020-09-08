@@ -1,18 +1,18 @@
 
 function editEmployee() {
-    document.getElementById('normal_emp_fname').removeAttribute('readonly');
-    document.getElementById('normal_emp_lname').removeAttribute('readonly');
-    document.getElementById('normal_emp_email').removeAttribute('readonly');
-    document.getElementById('normal_emp_mobileNo').removeAttribute('readonly');
-    document.getElementById('normal_emp_address').removeAttribute('readonly');
-    document.getElementById('normal_emp_nic').removeAttribute('readonly');
-    document.getElementById('normal_emp_gender').removeAttribute('disabled');
-    document.getElementById('normal_emp_birthDate').removeAttribute('readonly');
-    document.getElementById('normal_emp_designation').removeAttribute('disabled');
-    document.getElementById('normal_emp_joinedDate').removeAttribute('readonly');
-    document.getElementById('normal_emp_branch').removeAttribute('disabled');
-    document.getElementById('normal_emp_department').removeAttribute('disabled');
-    document.getElementById('normal_emp_current_password').removeAttribute('readonly');
+    document.getElementById('firstName').removeAttribute('readonly');
+    document.getElementById('lastName').removeAttribute('readonly');
+    document.getElementById('email').removeAttribute('readonly');
+    document.getElementById('address').removeAttribute('readonly');
+    document.getElementById('nic').removeAttribute('readonly');
+    document.getElementById('mobileNo').removeAttribute('readonly');
+    document.getElementById('gender').removeAttribute('disabled');
+    document.getElementById('birthday').removeAttribute('readonly');
+    document.getElementById('designation').removeAttribute('disabled');
+    document.getElementById('joinedDate').removeAttribute('readonly');
+    document.getElementById('branch').removeAttribute('disabled');
+    document.getElementById('department').removeAttribute('disabled');
+    document.getElementById('password').removeAttribute('readonly');
     document.getElementById('normal_emp_new_password').removeAttribute('readonly');
     document.getElementById('normal_emp_confirm_new_password').removeAttribute('readonly');
  
