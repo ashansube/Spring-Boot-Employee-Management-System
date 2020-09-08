@@ -30,4 +30,8 @@ public class PendingForVisaService {
 		return repo.findAll();
 	}
 	
+	public void deletePendingVisa(int id) {
+		repo.deleteById(id);
+	}
+	
 }

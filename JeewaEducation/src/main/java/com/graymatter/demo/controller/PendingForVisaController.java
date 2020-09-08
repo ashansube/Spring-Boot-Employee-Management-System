@@ -8,6 +8,7 @@ import javax.websocket.server.PathParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,15 +32,14 @@ public class PendingForVisaController {
 		
 		service.addPendingVisa(pendingforvisa);
 		
-		return "redirect:/";
+		return "redirect:/profile/submitvisaapplication";
 	}
 	
 	@PostMapping(value = "/admin/updatevisa")
-	public String updateVisaApplication(PendingForVisa pendingforvisa) {
-		
+	public String updateVisaApplication(@RequestParam int id,PendingForVisa pendingforvisa) {
+		service.deletePendingVisa(id);
 		service.addPendingVisa(pendingforvisa);
-		
-		return "redirect:/admin/visa-pendingstudents";
+		return "redirect:/admin/visa-pendinglist";
 	}
 	
 	
@@ -56,6 +56,12 @@ public class PendingForVisaController {
 	@GetMapping("/admin/visa-view")
 	public String getVisaStudent() {
 		return  "visa/viewvisastudent";
+	}
+	
+	@RequestMapping("/admin/deletependingvisa")
+	public String deletePendingVisa(@RequestParam int id) {
+		service.deletePendingVisa(id);
+		return "redirect:/admin/visa-pendinglist";
 	}
 	
 	@RequestMapping(value = "/admin/pendingvisa")
