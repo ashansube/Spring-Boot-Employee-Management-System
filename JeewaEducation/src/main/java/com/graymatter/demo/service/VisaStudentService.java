@@ -18,4 +18,11 @@ public class VisaStudentService {
 		return repo.findAll();
 	}
 	
+	public VisaStudent cheackLogin(String username, String password) {
+		return repo.LoginCheack(username, password);
+	}
+	
+	public VisaStudent findByUserName(String username) {
+		return repo.findByIdByUsername(username);
+	}
 }

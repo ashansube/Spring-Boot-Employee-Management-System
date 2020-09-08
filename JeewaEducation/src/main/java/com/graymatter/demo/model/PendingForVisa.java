@@ -14,7 +14,7 @@ public class PendingForVisa {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private int id;
 	
 	private String fname;
 	private String lname;
@@ -27,6 +27,11 @@ public class PendingForVisa {
 	private int zip;
 	private String marrage;
 	private String country;
+/*	
+	@OneToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name="visastidfk", nullable = false)
+	private VisaStudent visastudent;
+	*/
 	/*
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "pendingStudent_FK")
@@ -37,6 +42,8 @@ public class PendingForVisa {
 	public String getLname() {
 		return lname;
 	}
+
+
 
 	public void setLname(String lname) {
 		this.lname = lname;
@@ -122,11 +129,11 @@ public class PendingForVisa {
 		this.visastudent = visastudent;
 	}
 */
-	public long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -138,12 +145,16 @@ public class PendingForVisa {
 		this.fname = fname;
 	}
 
+
+
 	@Override
 	public String toString() {
 		return "PendingForVisa [id=" + id + ", fname=" + fname + ", lname=" + lname + ", other=" + other + ", email="
 				+ email + ", gender=" + gender + ", dob=" + dob + ", city=" + city + ", state=" + state + ", zip=" + zip
 				+ ", marrage=" + marrage + ", country=" + country + "]";
 	}
+
+
 
 	
 	
