@@ -27,12 +27,12 @@ public class StudentAdminController {
 		return "student/viewpendingstudent";
 	}
 	
-	@GetMapping("/view-foundation-stud")
+	@GetMapping("/admin/view-foundation-stud")
 	public String viewFoundationStud() {
 		return "student/viewfoundationstudents";
 	}
 	
-	@GetMapping("/foundation-stud")
+	@GetMapping("/admin/foundation-stud")
 	public String FoundationStud() {
 		return "student/foundationstudents";
 	}
