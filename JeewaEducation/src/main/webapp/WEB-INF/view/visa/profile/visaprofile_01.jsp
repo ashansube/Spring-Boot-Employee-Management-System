@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%
+    	if(session.getAttribute("visauserid")==null){
+    		response.sendRedirect("/profile/visa");
+    	}
+    %>
+    
 <!DOCTYPE html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 
 <head>
@@ -26,7 +34,11 @@
 </head>
 
 <body id="page-top">
+<input type="text" value="<%session.getAttribute("visauserid");%>">
 
+<c:out value="${sessionScope.visauserid}" />
+
+<a href="<% session.invalidate();%>">Logout</a>
   <!-- Page Wrapper -->
   <div id="wrapper">
 
@@ -284,7 +296,7 @@
 	          <br>
 	          <p>1. Fill and submit VISA application which is provide by university. click below button to apply for VISA.</p>
 	
-	          <button class="btn btn-primary mb-2">Apply Now</button>
+	          <button class="btn btn-primary mb-2"><a href="/profile/submitvisaapplication">Apply Now</a></button>
 	          <p>2. Wait until verify your application by agency.</p>
 	          <p>3. After verified your application, submit relavent document which required to VISA process. (  After verify your application, system will visible VISA submission application form with new interface. )</p>
 	          <p>4. After verify your VISA submission details, you have to face interview which conduct by Embassy. ( We will notify you interview date with time. )</p>

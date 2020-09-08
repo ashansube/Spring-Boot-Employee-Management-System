@@ -47,7 +47,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/admin/employee-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -63,14 +63,14 @@
 
       <!-- Nav Item -Employees List -->
       <li class="nav-item active">
-        <a class="nav-link" href="employees_table.html">
+        <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
       </li>
 
       <!-- Nav Item -Add Employees -->
       <li class="nav-item">
-        <a class="nav-link" href="add_employee.html">
+        <a class="nav-link" href="/admin/employee-addEmp">
           <i class="fas fa fa-plus"></i>
           <span>Add Employee</span></a>
       </li>
@@ -87,14 +87,14 @@
             
                   <!-- Nav Item -Department List -->
                   <li class="nav-item">
-                    <a class="nav-link" href="departments_table.html">
+                    <a class="nav-link" href="/admin/employee-department-table">
                       <i class="fas fa-list"></i>
                       <span>Departments List</span></a>
                   </li>
             
                   <!-- Nav Item -Add Department -->
                   <li class="nav-item">
-                    <a class="nav-link" href="add_department.html">
+                    <a class="nav-link" href="/admin/employee-department-add">
                       <i class="fas fa fa-plus"></i>
                       <span>Add Department</span></a>
                   </li>
@@ -111,14 +111,14 @@
             
                   <!-- Nav Item -Branches List -->
                   <li class="nav-item">
-                    <a class="nav-link" href="branches_table.html">
+                    <a class="nav-link" href="/admin/employee-branch-table">
                       <i class="fas fa-list"></i>
                       <span>Branches List</span></a>
                   </li>
             
                   <!-- Nav Item -Add Branch -->
                   <li class="nav-item">
-                    <a class="nav-link" href="add_branch.html">
+                    <a class="nav-link" href="/admin/employee-branch-add">
                       <i class="fas fa fa-plus"></i>
                       <span>Add Branch</span></a>
                   </li>
@@ -386,7 +386,7 @@
                         			<span class="text">View</span>
                         		</a>
                         	</td>  
-                        	<td><a href="/deleteEmployee/id=${employee.id}" class="btn btn-danger btn-icon-split">
+                        	<td><a href="deleteEmployee?id=${employee.id}" class="btn btn-danger btn-icon-split">
                                 	<span class="icon text-white-50">
                                 	<i class="fas fa-trash"></i>
                                 	</span>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
 	<name>JeewaEducation</name>
@@ -9,3 +10,16 @@
 	<natures>
 	</natures>
 </projectDescription>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>JeewaEducation</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+</projectDescription>
+>>>>>>> branch 'master' of https://github.com/pramitha1166/JeewaEducation.git

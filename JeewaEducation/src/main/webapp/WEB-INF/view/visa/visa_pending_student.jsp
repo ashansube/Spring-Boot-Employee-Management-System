@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
  <meta charset="utf-8">
@@ -22,6 +23,8 @@
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 </head>
 <body id="page-top">
+
+${visastudentlist}
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -298,7 +301,7 @@
                     <tr>
                         <th>Student Name</th>
                         <th>Student ID</th>
-                        <th>Univercity</th>
+                        <th>University</th>
                         <th>Age</th>
                         <th>Course</th>
                         <th>SEX</th>
@@ -307,87 +310,28 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>JW121212</td>
-                      <td>Wales, Australia</td>
-                      <td>21</td>
-                      <td>Software Engineering</td>
-                      <td>Male</td>
-                      <td><a href="#" class="btn btn-info btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-info-circle"></i>
-                        </span>
-                        <span class="text">View</span>
-                      </a></td>
-                      <td><a href="#" class="btn btn-danger btn-icon-split">
-                        <span class="icon text-white-50">
-                          <i class="fas fa-trash"></i>
-                        </span>
-                        <span class="text">Delete</span>
-                      </a></td>
-                    </tr>
-                    <tr>
-                        <td>Tiger Nixon</td>
-                        <td>JW121212</td>
-                        <td>Wales, Australia</td>
-                        <td>21</td>
-                        <td>Software Engineering</td>
-                        <td>Male</td>
-                        <td><a href="#" class="btn btn-info btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info-circle"></i>
-                          </span>
-                          <span class="text">View</span>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-trash"></i>
-                          </span>
-                          <span class="text">Delete</span>
-                        </a></td>
-                      </tr>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>JW121212</td>
-                        <td>Wales, Australia</td>
-                        <td>21</td>
-                        <td>Software Engineering</td>
-                        <td>Male</td>
-                        <td><a href="#" class="btn btn-info btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info-circle"></i>
-                          </span>
-                          <span class="text">View</span>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-trash"></i>
-                          </span>
-                          <span class="text">Delete</span>
-                        </a></td>
-                      </tr>
-                      <tr>
-                        <td>Tiger Nixon</td>
-                        <td>JW121212</td>
-                        <td>Wales, Australia</td>
-                        <td>21</td>
-                        <td>Software Engineering</td>
-                        <td>Male</td>
-                        <td><a href="#" class="btn btn-info btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-info-circle"></i>
-                          </span>
-                          <span class="text">View</span>
-                        </a></td>
-                        <td><a href="#" class="btn btn-danger btn-icon-split">
-                          <span class="icon text-white-50">
-                            <i class="fas fa-trash"></i>
-                          </span>
-                          <span class="text">Delete</span>
-                        </a></td>
-                      </tr>
-                   
+                  	<c:forEach var="visastudent" items="${visastudentlist}">
+                    	<tr>
+	                      <td>${visastudent.fullname}</td>
+	                      <td>${visastudent.id}</td>
+	                      <td>${visastudent.uni}</td>
+	                      <td>${visastudent.age}</td>
+	                      <td>${visastudent.course}</td>
+	                      <td>${visastudent.sex}</td>
+	                      <td><a href="#" class="btn btn-info btn-icon-split">
+	                        <span class="icon text-white-50">
+	                          <i class="fas fa-info-circle"></i>
+	                        </span>
+	                        <span class="text">View</span>
+	                      </a></td>
+	                      <td><a href="#" class="btn btn-danger btn-icon-split">
+	                        <span class="icon text-white-50">
+	                          <i class="fas fa-trash"></i>
+	                        </span>
+	                        <span class="text">Delete</span>
+	                      </a></td>
+	                   	</tr>
+	                  </c:forEach> 
                   </tbody>
                 </table>
               </div>

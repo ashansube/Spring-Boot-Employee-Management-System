@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.graymatter.demo.model.Employee;
@@ -24,7 +25,7 @@ public class EmployeeController {
 		
 		service.saveEmployee(employee);
 		
-		return "redirect:/";
+		return "redirect:/admin/employee-datatable";
 		
 	}
 
@@ -38,11 +39,11 @@ public class EmployeeController {
 		return "employee/view_employee";
 	}
 	
-	@GetMapping("/deleteEmployee/{id}")
-	public String deleteEmployee(@PathVariable(value="id") int id) {
+	@RequestMapping("/admin/deleteEmployee")
+	public String deleteEmployee(@RequestParam int id) {
 		
-		this.service.deleteEmployeeById(id);
-		return "redirect:/";
+		service.deleteEmployeeById(id);
+		return "redirect:/admin/employee-datatable";
 	}
 	
 	

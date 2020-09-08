@@ -75,7 +75,7 @@
       </div>
 
       <li class="nav-item active">
-        <a class="nav-link" href="employee_profile_account.html">
+        <a class="nav-link" href="/employee/employee-profile">
           <i class="fas fa-fw fa-user"></i>
           <span>Profile</span></a>
       </li>

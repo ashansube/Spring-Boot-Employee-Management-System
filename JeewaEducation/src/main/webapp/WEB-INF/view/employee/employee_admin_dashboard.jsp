@@ -42,7 +42,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="/admin/employee-dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -58,14 +58,14 @@
 
       <!-- Nav Item -Employees List -->
       <li class="nav-item">
-        <a class="nav-link" href="employees_table.html">
+        <a class="nav-link" href="/admin/employee-datatable">
           <i class="fas fa-list"></i>
           <span>Employee List</span></a>
       </li>
 
       <!-- Nav Item -Add Employees -->
       <li class="nav-item">
-        <a class="nav-link" href="add_employee.html">
+        <a class="nav-link" href="/admin/employee-addEmp">
           <i class="fas fa fa-plus"></i>
           <span>Add Employee</span></a>
       </li>
@@ -83,14 +83,14 @@
       
             <!-- Nav Item -Department List -->
             <li class="nav-item">
-              <a class="nav-link" href="departments_table.html">
+              <a class="nav-link" href="/admin/employee-department-table">
                 <i class="fas fa-list"></i>
                 <span>Departments List</span></a>
             </li>
       
             <!-- Nav Item -Add Department -->
             <li class="nav-item">
-              <a class="nav-link" href="add_department.html">
+              <a class="nav-link" href="/admin/employee-department-add">
                 <i class="fas fa fa-plus"></i>
                 <span>Add Department</span></a>
             </li>
@@ -107,14 +107,14 @@
             
                   <!-- Nav Item -Branches List -->
                   <li class="nav-item">
-                    <a class="nav-link" href="branches_table.html">
+                    <a class="nav-link" href="/admin/employee-branch-table">
                       <i class="fas fa-list"></i>
                       <span>Branches List</span></a>
                   </li>
             
                   <!-- Nav Item -Add Branch -->
                   <li class="nav-item">
-                    <a class="nav-link" href="add_branch.html">
+                    <a class="nav-link" href="/admin/employee-branch-add">
                       <i class="fas fa fa-plus"></i>
                       <span>Add Branch</span></a>
                   </li>
@@ -336,52 +336,58 @@
 
             <!-- Total Number of Employees In Institute -->
             <div class="col-xl-3 col-md-6 mb-4">
+             <a href="/admin/employee-datatable">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Toatal Number Of Employees</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">70</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Number Of Employees</div>
+                      
                     </div>
                     <div class="col-auto">
-                      <i class="#"></i>
+                      <i class="fas fa-address-card"></i>
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
 
             <!-- ETotal Number Of Departments -->
             <div class="col-xl-3 col-md-6 mb-4">
+             <a href="/admin/employee-department-table">
               <div class="card border-left-success shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Total Number Of Departments</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">8</div>
+                      
                     </div>
                     <div class="col-auto">
-                      <i class="#"></i>
+                      <i class="fas fa-code-branch"></i>
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
 
             <!-- Total Number Of Branches -->
             <div class="col-xl-3 col-md-6 mb-4">
+            <a href="/admin/employee-branch-table">
               <div class="card border-left-warning shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Total Number Of Branches</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">4</div>
+                    
                     </div>
                     <div class="col-auto">
-                      <i class="#"></i>
+                      <i class="fas fa-home"></i>
                     </div>
                   </div>
                 </div>
+                </a>
               </div>
             </div>
         
