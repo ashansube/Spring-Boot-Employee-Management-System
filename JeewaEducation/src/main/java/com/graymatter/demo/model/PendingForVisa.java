@@ -31,7 +31,7 @@ public class PendingForVisa {
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "pendingStudent_FK")
 	private VisaStudent visastudent; 
-	
+	as
 	*/
 	
 	public String getLname() {
