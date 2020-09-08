@@ -333,7 +333,7 @@ ${pendingvisa}
                           </span>
                           <span class="text">View</span>
                         </a></td>
-                        <td><a href="#" class="btn btn-danger btn-icon-split">
+                        <td><a href="deletependingvisa?id=${pendingforvisa.id}" class="btn btn-danger btn-icon-split">
                           <span class="icon text-white-50">
                             <i class="fas fa-trash"></i>
                           </span>

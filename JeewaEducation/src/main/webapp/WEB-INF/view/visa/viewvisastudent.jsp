@@ -290,7 +290,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                       </div>
-                      <input type="text" value="${pendingvisa.id}" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend"  readonly="readonly">
+                      <input name="id" type="text" value="${pendingvisa.id}" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend"  readonly="readonly">
                       <div class="invalid-tooltip">
                         Please choose a unique and valid username.
                       </div>
@@ -301,14 +301,14 @@
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">First name</label>
-                <input type="text" class="form-control" id="firstname" value="${pendingvisa.fname}" placeholder="First name"  required/>
+                <input name="fname" type="text" class="form-control" id="firstname" value="${pendingvisa.fname}" placeholder="First name"  required/>
                 <div class="valid-tooltip">
                   Looks good!
                 </div>
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Last name</label>
-                <input type="text" class="form-control" id="lastname" placeholder="Last name" value="${pendingvisa.lname}"  required>
+                <input name="lname" type="text" class="form-control" id="lastname" placeholder="Last name" value="${pendingvisa.lname}"  required>
                 <div class="valid-tooltip">
                   Looks good!
                 </div>
@@ -320,7 +320,7 @@
                 <div class="col-md-6 mb-3 mt-3">
                     <label for="validationTooltipUsername">Personal Email for VISA Process</label>
                     <div class="input-group">
-                      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  class="form-control" id="visaemail"  placeholder="student@gmail.com" value="${pendingvisa.email}" aria-describedby="validationTooltipUsernamePrepend" required>
+                      <input name="email" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"  class="form-control" id="visaemail"  placeholder="student@gmail.com" value="${pendingvisa.email}" aria-describedby="validationTooltipUsernamePrepend" required>
                       <div class="invalid-tooltip">
                         Please Enter Valid Email.
                       </div>
@@ -334,11 +334,11 @@
                     <label for="validationTooltipUsername">Gender</label>
                     <div class="input-group">
 
-                        <select class="custom-select" id="gender"  required>
-                            <option value="">Select the Gender</option>
-                            <option value="1" selected>Male</option>
-                            <option value="2">Female</option>
-                            <option value="3">Other</option>
+                        <select class="custom-select" id="gender" name="gender" required>
+                            <option value="${pendingvisa.gender}">${pendingvisa.gender}</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
                           </select>
                     </div>
                   </div>
@@ -346,7 +346,7 @@
                   <div class="col-md-6 mb-3 mt-3">
                     <label for="validationTooltipUsername">Select Date Of Birth</label>
                     <div class="input-group">
-                      <input type="date" class="form-control" value="${pendingvisa.dob}" id="dateofbirth"  value="09/02/1998" aria-describedby="validationTooltipUsernamePrepend" required>
+                      <input type="date" class="form-control" name="dob" value="${pendingvisa.dob}" id="dateofbirth"  value="09/02/1998" aria-describedby="validationTooltipUsernamePrepend" required>
                       <div class="invalid-tooltip">
                         Please Slect Date Of Birth.
                       </div>
@@ -359,19 +359,19 @@
 
             <div class="form-row ">
               <div class="col-md-6 mb-3">
-                <input type="text" class="form-control" value="${pendingvisa.city}" id="city" placeholder="City"  required>
+                <input type="text" class="form-control" name="city" value="${pendingvisa.city}" id="city" placeholder="City"  required>
                 <div class="invalid-tooltip">
                   Please provide a valid city.
                 </div>
               </div>
               <div class="col-md-3 mb-3 ">
-                <input type="text" class="form-control" id="state" value="${pendingvisa.state}" placeholder="State"   required>
+                <input type="text" class="form-control" name="state" id="state" value="${pendingvisa.state}" placeholder="State"   required>
                 <div class="invalid-tooltip">
                   Please provide a valid state.
                 </div>
               </div>
               <div class="col-md-3 mb-3 ">
-                <input type="text" class="form-control" id="zip" placeholder="Zip" value="${pendingvisa.zip}"  required>
+                <input type="text" class="form-control" name="zip" id="zip" placeholder="Zip" value="${pendingvisa.zip}"  required>
                 <div class="invalid-tooltip">
                   Please provide a valid zip.
                 </div>
@@ -385,10 +385,10 @@
                     <div class="input-group">
 
                         <select class="custom-select" id="marrage" name="marrage"  required>
-                            <option value="">Select Current Martial Status</option>
-                            <option value="1" selected>Married</option>
-                            <option value="2">Engaged</option>
-                            <option value="3">Not-Married</option>
+                            <option value="${pendingvisa.marrage}">${pendingvisa.marrage}</option>
+                            <option value="Married">Married</option>
+                            <option value="Engaged">Engaged</option>
+                            <option value="Not-Married">Not-Married</option>
                           </select>
                     </div>
                   </div>
@@ -396,7 +396,7 @@
 
                   <div class="col-md-6 mb-2 mt-3">
                     <label for="validationTooltip01">Country Of Current Residence</label>
-                    <input type="text" class="form-control" id="currentResidence"  placeholder="Country Name" value="${pendingvisa.country}" required>
+                    <input type="text" class="form-control" id="currentResidence" name="country"  placeholder="Country Name" value="${pendingvisa.country}" required>
             	</div>
 			
 			<input type="submit" class="btn btn-primary mt-4" value="Update"/>
