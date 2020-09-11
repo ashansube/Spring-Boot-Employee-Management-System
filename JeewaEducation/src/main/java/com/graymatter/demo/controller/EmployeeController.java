@@ -29,6 +29,7 @@ public class EmployeeController {
 		
 	}
 
+	
 	@GetMapping("/admin/viewEmployee")
 	public String viewEmployee(@RequestParam int id, Model model) {
 		
@@ -38,6 +39,7 @@ public class EmployeeController {
 		
 		return "employee/view_employee";
 	}
+	
 	
 	@RequestMapping("/admin/deleteEmployee")
 	public String deleteEmployee(@RequestParam int id) {

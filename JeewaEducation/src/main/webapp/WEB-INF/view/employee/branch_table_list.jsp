@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -343,205 +345,56 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start</th>
-                      <th>Salary</th>
+                      <th>Branch Name</th>
+                      <th>Phone No</th>
+                      <th>Email</th>
+                      <th>Location</th>
+                      <th>Address</th>
+                      <th>Post Code</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start</th>
-                      <th>Salary</th>
+                      <th>Branch Name</th>
+                      <th>Phone No</th>
+                      <th>Email</th>
+                      <th>Location</th>
+                      <th>Address</th>
+                      <th>Post Code</th>
                       <th>Edit</th>
                       <th>Delete</th>
                     </tr>
                   </tfoot>
                   <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="far fa-edit"></i>
-                                </span>
-                                <span class="text">Edit</span>
-                           </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Garrett Winters</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>63</td>
-                      <td>2011/07/25</td>
-                      <td>$170,750</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                          </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Ashton Cox</td>
-                      <td>Junior Technical Author</td>
-                      <td>San Francisco</td>
-                      <td>66</td>
-                      <td>2009/01/12</td>
-                      <td>$86,000</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                            <span class="icon text-white-50">
-                            <i class="far fa-edit"></i>
-                            </span>
-                            <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Cedric Kelly</td>
-                      <td>Senior Javascript Developer</td>
-                      <td>Edinburgh</td>
-                      <td>22</td>
-                      <td>2012/03/29</td>
-                      <td>$433,060</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Airi Satou</td>
-                      <td>Accountant</td>
-                      <td>Tokyo</td>
-                      <td>33</td>
-                      <td>2008/11/28</td>
-                      <td>$162,700</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Brielle Williamson</td>
-                      <td>Integration Specialist</td>
-                      <td>New York</td>
-                      <td>61</td>
-                      <td>2012/12/02</td>
-                      <td>$372,000</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Herrod Chandler</td>
-                      <td>Sales Assistant</td>
-                      <td>San Francisco</td>
-                      <td>59</td>
-                      <td>2012/08/06</td>
-                      <td>$137,500</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
-                    <tr>
-                      <td>Rhona Davidson</td>
-                      <td>Integration Specialist</td>
-                      <td>Tokyo</td>
-                      <td>55</td>
-                      <td>2010/10/14</td>
-                      <td>$327,900</td>
-                      <td> <a href="#" class="btn btn-success btn-icon-split">
-                        <span class="icon text-white-50">
-                        <i class="far fa-edit"></i>
-                        </span>
-                        <span class="text">Edit</span>
-                        </a>     
-                    </td>
-                    <td> <a href="#" class="btn btn-danger btn-icon-split">
-                                <span class="icon text-white-50">
-                                <i class="fas fa-trash"></i>
-                                </span>
-                                <span class="text">Delete</span>
-                         </a>
-                    </td>
-                    </tr>
+						<c:forEach var="branch" items="${listBranches}">
+				
+							<tr>
+								<td>${branch.branchName}</td>
+								<td>${branch.bphoneNo}</td>
+								<td>${branch.branchEmail}</td>
+								<td>${branch.branchLocation}</td>
+								<td>${branch.branchAddress}</td>
+								<td>${branch.branchPCode}</td>
+
+                  	  		
+                  	  		<td><a href="viewBranch?id=${branch.id}" class="btn btn-info btn-icon-split">
+                  	  		  		<span class="icon text-white-50">
+                        			<i class="fas fa fa-eye"></i>
+                        			</span>
+                        			<span class="text">View</span>
+                        		</a>
+                        	</td>  
+                        	<td><a href="deleteBranch?id=${branch.id}" class="btn btn-danger btn-icon-split">
+                                	<span class="icon text-white-50">
+                                	<i class="fas fa-trash"></i>
+                                	</span>
+                               		<span class="text">Delete</span>
+                         		</a>
+                    		</td>		  
+                  	  </tr>
+                  	  </c:forEach>  
                   </tbody>
                 </table>
               </div>

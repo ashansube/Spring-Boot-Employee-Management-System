@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -334,16 +336,16 @@
           <h1 class="h3 mb-2 text-gray-800">Add Department</h1>
           <br>
 
-          <form class="was-validated">
+          <form class="was-validated" action="department" method="POST">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Department Name</label>
-                <select class="custom-select" id="department_add_name" required>
+                <select class="custom-select" id="department_add_name" name="departmentName" required>
                   <option value="">Choose...</option>
-                  <option value ="1">Marketing</option>
-                  <option value="2">Accounting and Finance</option>
-                  <option value="3">Human Resource Management</option>
-                  <option value="3">Research and Development</option>
+                  <option value ="Marketing">Marketing</option>
+                  <option value="Accounting and Finance">Accounting and Finance</option>
+                  <option value="Human Resource Management">Human Resource Management</option>
+                  <option value="Research and Development">Research and Development</option>
                 </select>
                 <div class="invalid-tooltip">
                   Please Enter Correct Department Name.
@@ -356,7 +358,7 @@
               
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Department Phone No</label>
-                <input type="text" class="form-control" id="department_add_phoneNo" placeholder="Department Phone Number" required>
+                <input type="text" class="form-control" id="department_add_phoneNo" name="dphoneNo" placeholder="Department Phone Number" required>
                 <div class="invalid-tooltip">
                   Please Enter Department Phone No.
                 </div>
@@ -374,7 +376,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_add_email" placeholder="Department Email" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_add_email" name="departmentEmail" placeholder="Department Email" aria-describedby="validationTooltipUsernamePrepend" required>
                   <div class="invalid-tooltip">
                     Please Enter Department Email.
                   </div>
@@ -386,12 +388,12 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipDPBranch">Branch</label>
-                  <select class="custom-select" id="department_add_branch" required>
+                  <select class="custom-select" id="department_add_branch" name="department_branch" required>
                     <option value="">Choose...</option>
-                    <option value ="1">Kandy</option>
-                    <option value="2">Colombo</option>
-                    <option value="3">Kurunagala</option>
-                    <option value="3">Matara</option>
+                    <option value ="Kandy">Kandy</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Kurunagala">Kurunagala</option>
+                    <option value="Matara">Matara</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Correct Branch.
@@ -406,7 +408,7 @@
             <div class="form-row">
               <div class="col-md-12 mb-3 mt-4">
                 <label for="validationTooltip03">Address</label>
-                <input type="text" class="form-control" id="department_add_address" placeholder="Department Address" required>
+                <input type="text" class="form-control" id="department_add_address" name="department_address" placeholder="Department Address" required>
                 <div class="invalid-tooltip">
                   Please Provide a Valid Department Address.
                 </div>
@@ -419,7 +421,7 @@
             <div class="form-row">
               <div class="col-md-12 mb-3 mt-4 mb-4">
                 <label for="validationTooltip03">Department Entention No</label>
-                <input type="text" class="form-control" id="department_add_ententionNo" placeholder="Department Entention No" required>
+                <input type="text" class="form-control" id="department_add_ententionNo" name="department_ententionNo" placeholder="Department Entention No" required>
                 <div class="invalid-tooltip">
                   Please Provide a Valid Department Entention No.
                 </div>
@@ -429,7 +431,7 @@
               </div>
             </div>
 
-            <button class="btn btn-primary mt-4 mb-4" type="submit">Submit form</button>
+            <button class="btn btn-primary mt-4 mb-4" type="submit">Add Department</button>
             <button class="btn btn-secondary mt-4 mb-4" type="submit">Cancel</button>
           </form>
                 

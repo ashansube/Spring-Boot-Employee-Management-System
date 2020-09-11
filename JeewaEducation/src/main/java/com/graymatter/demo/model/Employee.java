@@ -121,6 +121,14 @@ public class Employee {
 		this.password = password;
 	}
 	
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", gender=" + gender + ", address=" + address + ", nic=" + nic + ", mobileNo=" + mobileNo
+				+ ", designation=" + designation + ", birthday=" + birthday + ", joinedDate=" + joinedDate
+				+ ", password=" + password + "]";
+	}
+	
 	
 	
 }

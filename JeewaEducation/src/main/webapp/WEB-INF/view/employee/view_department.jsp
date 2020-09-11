@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -334,16 +336,16 @@
           <h1 class="h3 mb-2 text-gray-800" id="department_update_text">View Department</h1>
           <br>
 
-          <form class="was-validated">
+          <form class="was-validated" action="department" method="POST">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Department Name</label>
-                <select class="custom-select" id="department_name" disabled="disabled" required>
-                  <option value="">Choose...</option>
-                  <option value ="1">Marketing</option>
-                  <option value="2">Accounting and Finance</option>
-                  <option value="3">Human Resource Management</option>
-                  <option value="3">Research and Development</option>
+                <select class="custom-select" id="departmentName" name="departmentName" disabled="disabled" required>
+                  <option value="${department.departmentName}" selected>${department.departmentName}</option>
+                  <option value ="Marketing">Marketing</option>
+                  <option value="Accounting and Finance">Accounting and Finance</option>
+                  <option value="Human Resource Management">Human Resource Management</option>
+                  <option value="Research and Development">Research and Development</option>
                 </select>
                 <div class="invalid-tooltip">
                   Please Enter Correct Department Name.
@@ -356,7 +358,7 @@
               
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Department Phone No</label>
-                <input type="text" class="form-control" id="department_phoneNo" placeholder="Department Phone Number" readonly="readonly" required>
+                <input type="text" class="form-control" id="department_phoneNo" name="dphoneNo" value="${department.dphoneNo}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Enter Department Phone No.
                 </div>
@@ -374,7 +376,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_email" placeholder="Department Email" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="department_email" name="departmentEmail" value="${department.departmentEmail}" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
                   <div class="invalid-tooltip">
                     Please Enter Department Email.
                   </div>
@@ -386,12 +388,12 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipDPBranch">Branch</label>
-                  <select class="custom-select" id="department_branch" disabled="disabled" required>
-                    <option value="">Choose...</option>
-                    <option value ="1">Kandy</option>
-                    <option value="2">Colombo</option>
-                    <option value="3">Kurunagala</option>
-                    <option value="3">Matara</option>
+                  <select class="custom-select" id="department_branch" name="department_branch" disabled="disabled" required>
+                    <option value="${department.department_branch}" selected>${department.department_branch}</option>
+                    <option value ="Kandy">Kandy</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Kurunagala">Kurunagala</option>
+                    <option value="Matara">Matara</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Correct Branch.
@@ -406,7 +408,7 @@
             <div class="form-row">
               <div class="col-md-12 mb-3 mt-4">
                 <label for="validationTooltip03">Address</label>
-                <input type="text" class="form-control" id="department_address" placeholder="Department Address" readonly="readonly" required>
+                <input type="text" class="form-control" id="department_address" name="department_address" value="${department.department_address}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Provide a Valid Department Address.
                 </div>
@@ -419,7 +421,7 @@
             <div class="form-row">
               <div class="col-md-12 mb-3 mt-4 mb-4">
                 <label for="validationTooltip03">Department Entention No</label>
-                <input type="text" class="form-control" id="department_ententionNo" placeholder="Department Entention No" readonly="readonly" required>
+                <input type="text" class="form-control" id="department_ententionNo" name="department_ententionNo" value="${department.department_ententionNo}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Provide a Valid Department Entention No.
                 </div>
@@ -428,9 +430,10 @@
                 </div>
               </div>
             </div>
-
-            <button class="btn btn-primary mt-4 mb-4" type="submit" id="department_view_btn_text" onclick="editDepartment()">Update</button>
-            <button class="btn btn-secondary mt-4 mb-4" type="submit" id="department_cancel_edit" hidden>Cancel</button>
+            
+			<button class="btn btn-secondary mt-4 mb-6" type="submit" id="department_cancel_edit" hidden="hidden">Save</button>
+            <button class="btn btn-primary mt-4 mb-6" type="button" id="department_view_btn_text" onclick="editDepartment()">Update</button>
+            
           </form>
                 
 

@@ -16,7 +16,7 @@ function editEmployee() {
     document.getElementById('normal_emp_new_password').removeAttribute('readonly');
     document.getElementById('normal_emp_confirm_new_password').removeAttribute('readonly');
  
-    document.getElementById('employee_view_btn_text').innerText = "Save";
+    document.getElementById('employee_view_btn_text').innerText = "Cancel";
 
     document.getElementById('employee_update_text').innerText = "Update Employee";
 
@@ -43,14 +43,14 @@ function editBranch() {
 }
 
 function editDepartment() {
-    document.getElementById('department_name').removeAttribute('disabled');
+    document.getElementById('departmentName').removeAttribute('disabled');
     document.getElementById('department_phoneNo').removeAttribute('readonly');
     document.getElementById('department_email').removeAttribute('readonly');
     document.getElementById('department_address').removeAttribute('readonly');
     document.getElementById('department_ententionNo').removeAttribute('readonly');
     document.getElementById('department_branch').removeAttribute('disabled');
  
-    document.getElementById('department_view_btn_text').innerText = "Save";
+    document.getElementById('department_view_btn_text').innerText = "Cancel";
 
     document.getElementById('department_update_text').innerText = "Update Department";
 

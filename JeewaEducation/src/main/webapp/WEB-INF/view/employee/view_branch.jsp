@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -334,11 +336,11 @@
           <h1 class="h3 mb-2 text-gray-800" id="branch_update_text">View Branch</h1>
           <br>
 
-          <form class="was-validated">
+          <form class="was-validated" action="branch" method="POST">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Branch Name</label>
-                <input type="text" class="form-control" id="employee_branch_name" placeholder="Branch Name" readonly="readonly" required>
+                <input type="text" class="form-control" id="employee_branch_name" name="branchName" value="${branch.branchName}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Enter Branch Name.
                 </div>
@@ -348,7 +350,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Branch Phone No</label>
-                <input type="text" class="form-control" id="employee_branch_phoneNo" placeholder="Branch Phone No" readonly="readonly" required>
+                <input type="text" class="form-control" id="employee_branch_phoneNo" name="bphoneNo" value="${branch.bphoneNo}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Enter Branch Phone No.
                 </div>
@@ -366,7 +368,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="employee_branch_email" placeholder="Branch Email" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="employee_branch_email" name="branchEmail" value="${branch.branchEmail}" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
                   <div class="invalid-tooltip">
                     Please Enter Branch Email.
                   </div>
@@ -378,12 +380,12 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipBranch">Branch Location</label>
-                  <select class="custom-select" id="employee_branch_location" disabled="disabled" required>
-                    <option value="">Choose...</option>
-                    <option value ="1">Kandy</option>
-                    <option value="2">Colombo</option>
-                    <option value="3">Kurunagala</option>
-                    <option value="3">Matara</option>
+                  <select class="custom-select" id="employee_branch_location" name="branchLocation" disabled="disabled" required>
+                    <option value="${branch.branchLocation}" selected>${branch.branchLocation}</option>
+                    <option value ="Kandy">Kandy</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Kurunagala">Kurunagala</option>
+                    <option value="Matara">Matara</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Branch.
@@ -397,7 +399,7 @@
             <div class="form-row">
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltip03">Branch Address</label>
-                <input type="text" class="form-control" id="employee_branch_address" placeholder="Branch Address" readonly="readonly" required>
+                <input type="text" class="form-control" id="employee_branch_address" name="branchAddress" value="${branch.branchAddress}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please provide a valid Address.
                 </div>
@@ -407,7 +409,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip04">POST Code</label>
-                <input type="text" class="form-control" id="employee_branch_postCode" placeholder="Post Code" readonly="readonly" required>
+                <input type="text" class="form-control" id="employee_branch_postCode" name="branchPCode" value="${branch.branchPCode}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please provide a valid Post Code.
                 </div>
@@ -417,7 +419,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip05">Fax No</label>
-                <input type="text" class="form-control" id="employee_branch_faxNo" placeholder="Fax No" readonly="readonly"  required>
+                <input type="text" class="form-control" id="employee_branch_faxNo" name="baranchFaxNo" value="${branch.baranchFaxNo}" readonly="readonly"  required>
                 <div class="invalid-tooltip">
                   Please provide a valid Fax No.
                 </div>
@@ -426,8 +428,10 @@
                 </div>
               </div>
             </div>
-            <button class="btn btn-primary mt-4" type="submit" id="branch_view_btn_text" onclick="editBranch()">Update</button>
-            <button class="btn btn-secondary mt-4" type="submit" id="branch_cancel_edit" hidden>Cancel</button>
+            
+            <button class="btn btn-secondary mt-4" type="submit" id="branch_cancel_edit" hidden="hidden">Save</button>
+            <button class="btn btn-primary mt-4" type="button" id="branch_view_btn_text" onclick="editBranch()">Update</button>
+            
           </form>
                 
 

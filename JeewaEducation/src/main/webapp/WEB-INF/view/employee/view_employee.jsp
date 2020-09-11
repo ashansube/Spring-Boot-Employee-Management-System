@@ -340,7 +340,7 @@
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">First name</label>
-                <input type="text" class="form-control" id="firstName" value="${employee.firstName}" readonly="readonly" required>
+                <input type="text" class="form-control" id="firstName" name="firstName" value="${employee.firstName}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Enter First-Name.
                 </div>
@@ -350,7 +350,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Last name</label>
-                <input type="text" class="form-control" id="lastName" value="${employee.lastName}" readonly="readonly" required>
+                <input type="text" class="form-control" id="lastName" name="lastName" value="${employee.lastName}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please Enter Last-Name.
                 </div>
@@ -368,7 +368,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="inlineFormCustomSelect">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" value="${employee.email}" id="email" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" value="${employee.email}" id="email" name="email" aria-describedby="validationTooltipUsernamePrepend" readonly="readonly" required>
                   <div class="invalid-tooltip">
                     Please Select Valid email.
                   </div>
@@ -380,7 +380,7 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipGender">Gender</label>
-                  <select class="custom-select" id="gender" disabled="disabled" required>
+                  <select class="custom-select" id="gender" name="gender" disabled="disabled" required>
                   	<option value="${employee.gender}" selected>${employee.gender}</option>
                     <option value ="Male">Male</option>
                     <option value="Female">Female</option>
@@ -399,7 +399,7 @@
             <div class="form-row">
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltip03">Address</label>
-                <input type="text" class="form-control" id="address" value="${employee.address}" readonly="readonly" required>
+                <input type="text" class="form-control" id="address" name="address" value="${employee.address}" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please provide Valid Address.
                 </div>
@@ -409,7 +409,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip04">NIC</label>
-                <input type="text" class="form-control" id="nic" value="${employee.nic}" readonly="readonly" required>
+                <input type="text" class="form-control" id="nic" value="${employee.nic}" name="nic" readonly="readonly" required>
                 <div class="invalid-tooltip">
                   Please provide Valid NIC.
                 </div>
@@ -419,7 +419,7 @@
               </div>
               <div class="col-md-3 mb-3 mt-4">
                 <label for="validationTooltip05">Mobile Number</label>
-                <input type="text" class="form-control" id="mobileNo" value="${employee.mobileNo}" readonly="readonly"  required>
+                <input type="text" class="form-control" name="mobileNo" id="mobileNo" value="${employee.mobileNo}" readonly="readonly"  required>
                 <div class="invalid-tooltip">
                   Please provide Mobile Number.
                 </div>
@@ -430,8 +430,8 @@
 
               <div class="col-md-6 mb-4 mt-4">
                 <label for="validationTooltipDesignation">Designation / Position</label>
-                  <select class="custom-select" id="designation"  disabled="disabled" required>
-                    <option value="${employee.designation}" selected></option>
+                  <select class="custom-select" id="designation" name="designation"  disabled="disabled" required>
+                    <option value="${employee.designation}" selected>${employee.designation}</option>
                     <option value ="Manager">Manager</option>
                     <option value="Reception">Reception</option>
                     <option value="Web Manager">Web Manager</option>
@@ -446,7 +446,7 @@
 
               <div class="col-md-3 mb-4 mt-4">
                 <label for="validationTooltip05">Birth Date</label>
-                <input type="text" class="form-control" id="birthday" value="${employee.birthday}" readonly="readonly"  required>
+                <input type="text" class="form-control" id="birthday" name="birthday" value="${employee.birthday}" readonly="readonly"  required>
                 <div class="invalid-tooltip">
                   Please provide Birth Date.
                 </div>
@@ -457,7 +457,7 @@
 
               <div class="col-md-3 mb-4 mt-4">
                 <label for="validationTooltip05">Joined Date</label>
-                <input type="text" class="form-control" id="joinedDate" value="${employee.joinedDate}" readonly="readonly">
+                <input type="text" class="form-control" id="joinedDate" name="joinedDate" value="${employee.joinedDate}" readonly="readonly">
                 <div class="invalid-tooltip">
                   Please provide Joined Date.
                 </div>
@@ -468,7 +468,7 @@
 
               <div class="col-md-6 mb-4 mt-4">
                 <label for="validationTooltipDesignation">Branch</label>
-                  <select class="custom-select" id="branch"  disabled="disabled">
+                  <select class="custom-select" id="branch" name="branch"  disabled="disabled">
                     <option value="">Choose...</option>
                     <option value ="Kandy">Kandy</option>
                     <option value="Colombo" selected>Colombo</option>
@@ -485,7 +485,7 @@
 
                 <div class="col-md-6 mb-4 mt-4">
                   <label for="validationTooltipDesignation">Department</label>
-                    <select class="custom-select" id=department  disabled="disabled">
+                    <select class="custom-select" id=department name=department  disabled="disabled">
                       <option value="">Choose...</option>
                       <option value ="Marketing">Marketing</option>
                       <option value="Accounting and Finance">Accounting and Finance</option>
@@ -506,7 +506,7 @@
               <div class="form-row">
                 <div class="col-md-6 mb-3 mt-4">
                   <label for="validationTooltip03">Current Password</label>
-                  <input type="text" class="form-control" id="password" value="${employee.password}" readonly="readonly">
+                  <input type="text" class="form-control" id="password" name="password" value="${employee.password}" readonly="readonly">
                   <div class="invalid-tooltip">
                     Please Enter Current Password.
                   </div>
@@ -517,7 +517,7 @@
 
                 <div class="col-md-3 mb-3 mt-4">
                   <label for="validationTooltip04">New Password</label>
-                  <input type="password" class="form-control" id="normal_emp_new_password" readonly="readonly">
+                  <input type="password" class="form-control" id="normal_emp_new_password" name="normal_emp_new_password" readonly="readonly">
                   <div class="invalid-tooltip">
                     Please Enter New Passsword.
                   </div>
@@ -528,7 +528,7 @@
 
                 <div class="col-md-3 mb-3 mt-4">
                   <label for="validationTooltip05">Confirm New Password</label>
-                  <input type="password" class="form-control" id="normal_emp_confirm_new_password" readonly="readonly">
+                  <input type="password" class="form-control" id="normal_emp_confirm_new_password" name="normal_emp_confirm_new_password" readonly="readonly">
                   <div class="invalid-tooltip">
                     Please Confirm New Password.
                   </div>
@@ -538,9 +538,11 @@
                 </div>
                 </div>
             </div>
+
+                       
+            <button class="btn btn-secondary mt-4 mb-6" type="submit" id="employee_cancel_edit" hidden="hidden">Save</button>
+            <button class="btn btn-primary mt-4 mb-6" type="button" id="employee_view_btn_text" onclick="editEmployee()">Update</button>
             
-            <button class="btn btn-primary mt-4 mb-6" type="submit" id="employee_view_btn_text" onclick="editEmployee()">Update</button>
-            <button class="btn btn-secondary mt-4 mb-6" type="submit" id="employee_cancel_edit" hidden>Cancel</button>
           </form>
                 
 

@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.graymatter.demo.service.BranchService;
+import com.graymatter.demo.service.DepartmentService;
 import com.graymatter.demo.service.EmployeeService;
 
 @Controller
@@ -21,6 +23,25 @@ public class EmployeeAdminController {
 	}
 	
 	
+	@Autowired
+	private DepartmentService departmentService;
+
+	@GetMapping("/admin/employee-department-table")
+	public String departmentDataTable( Model model) {
+		model.addAttribute("listDepartments",departmentService.getAllDepartments());
+		return "employee/department_table_list";
+	}
+	
+	@Autowired
+	private BranchService branchService;
+	
+	@GetMapping("/admin/employee-branch-table")
+	public String branchDataTable(Model model) {
+		model.addAttribute("listBranches", branchService.getAllBranches());
+		return "employee/branch_table_list";
+	}
+	
+	
 	@GetMapping("/admin/employee-dashboard")
 	public String employeeDash() {
 		return "employee/employee_admin_dashboard";
@@ -33,20 +54,11 @@ public class EmployeeAdminController {
 	}
 	
 	
-	@GetMapping("/admin/employee-department-table")
-	public String departmentDataTable() {
-		return "employee/department_table_list";
-	}
-	
 	@GetMapping("/admin/employee-department-add")
 	public String departmentAdd() {
 		return "employee/add_department";
 	}
 	
-	@GetMapping("/admin/employee-branch-table")
-	public String branchDataTable() {
-		return "employee/branch_table_list";
-	}
 	
 	@GetMapping("/admin/employee-branch-add")
 	public String branchAdd() {

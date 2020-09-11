@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -334,11 +336,11 @@
           <h1 class="h3 mb-2 text-gray-800">Add Branch</h1>
           <br>
 
-          <form class="was-validated">
+          <form class="was-validated" action="branch" method="POST">
             <div class="form-row">
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip01">Branch Name</label>
-                <input type="text" class="form-control" id="employee_branch_add_name" placeholder="Branch Name" required>
+                <input type="text" class="form-control" id="employee_branch_add_name" name="branchName" placeholder="Branch Name" required>
                 <div class="invalid-tooltip">
                   Please Enter Branch Name.
                 </div>
@@ -348,7 +350,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="validationTooltip02">Branch Phone No</label>
-                <input type="text" class="form-control" id="employee_branch_add_phoneNo" placeholder="Branch Phone No" required>
+                <input type="text" class="form-control" id="employee_branch_add_phoneNo" name="bphoneNo" placeholder="Branch Phone No" required>
                 <div class="invalid-tooltip">
                   Please Enter Branch Phone No.
                 </div>
@@ -366,7 +368,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
                   </div>
-                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="employee_branch_add_email" placeholder="Branch Email" aria-describedby="validationTooltipUsernamePrepend" required>
+                  <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="employee_branch_add_email" name="branchEmail"  placeholder="Branch Email" aria-describedby="validationTooltipUsernamePrepend" required>
                   <div class="invalid-tooltip">
                     Please Enter Branch Email.
                   </div>
@@ -378,12 +380,12 @@
 
               <div class="col-md-6 mb-3 mt-4">
                 <label for="validationTooltipBranch">Branch Location</label>
-                  <select class="custom-select" id="employee_branch_add_location" required>
+                  <select class="custom-select" id="employee_branch_add_location" name="branchLocation" required>
                     <option value="">Choose...</option>
-                    <option value ="1">Kandy</option>
-                    <option value="2">Colombo</option>
-                    <option value="3">Kurunagala</option>
-                    <option value="3">Matara</option>
+                    <option value ="Kandy">Kandy</option>
+                    <option value="Colombo">Colombo</option>
+                    <option value="Kurunagala">Kurunagala</option>
+                    <option value="Matara">Matara</option>
                   </select>
                     <div class="invalid-tooltip">
                       Please Select Branch.
@@ -397,7 +399,7 @@
             <div class="form-row">
               <div class="col-md-6 mb-5 mt-4">
                 <label for="validationTooltip03">Branch Address</label>
-                <input type="text" class="form-control" id="employee_branch_add_address" placeholder="Branch Address" required>
+                <input type="text" class="form-control" id="employee_branch_add_address" name="branchAddress" placeholder="Branch Address" required>
                 <div class="invalid-tooltip">
                   Please provide a valid Address.
                 </div>
@@ -407,7 +409,7 @@
               </div>
               <div class="col-md-3 mb-5 mt-4">
                 <label for="validationTooltip04">POST Code</label>
-                <input type="text" class="form-control" id="employee_branch_add_postCode" placeholder="Post Code" required>
+                <input type="text" class="form-control" id="employee_branch_add_postCode" name="branchPCode" placeholder="Post Code" required>
                 <div class="invalid-tooltip">
                   Please provide a valid Post Code.
                 </div>
@@ -417,7 +419,7 @@
               </div>
               <div class="col-md-3 mb-5 mt-4">
                 <label for="validationTooltip05">Fax No</label>
-                <input type="text" class="form-control" id="employee_branch_faxNo" placeholder="Fax No"  required>
+                <input type="text" class="form-control" id="employee_branch_faxNo" name="baranchFaxNo" placeholder="Fax No"  required>
                 <div class="invalid-tooltip">
                   Please provide a valid Fax No.
                 </div>
@@ -427,7 +429,7 @@
 
               </div>
             </div>
-            <button class="btn btn-primary mt-4 mb-4" type="submit">Submit form</button>
+            <button class="btn btn-primary mt-4 mb-4" type="submit">Add Branch</button>
             <button class="btn btn-secondary mt-4 mb-4" type="submit">Cancel</button>
           </form>
                 
