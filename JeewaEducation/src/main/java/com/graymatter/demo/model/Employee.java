@@ -43,7 +43,13 @@ public class Employee {
 	
 	@Column(name = "joined_date")
 	private String joinedDate;
+
+	@Column(name = "branch")
+	private String branch;
 	
+	@Column(name = "department")
+	private String department;
+		
 	@Column(name = "password")
 	private String password;
 	
@@ -114,6 +120,19 @@ public class Employee {
 	public void setJoinedDate(String joinedDate) {
 		this.joinedDate = joinedDate;
 	}
+	
+	public String getBranch() {
+		return branch;
+	}
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
 	public String getPassword() {
 		return password;
 	}
@@ -126,7 +145,7 @@ public class Employee {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
 				+ ", gender=" + gender + ", address=" + address + ", nic=" + nic + ", mobileNo=" + mobileNo
 				+ ", designation=" + designation + ", birthday=" + birthday + ", joinedDate=" + joinedDate
-				+ ", password=" + password + "]";
+				+ ", branch=" + branch + ", department=" + department + ", password=" + password + "]";
 	}
 	
 	

@@ -2,6 +2,10 @@
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%> 
+	<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+	<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+	<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +27,8 @@
 
   <!-- Custom styles for this page -->
   <link href="../static/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+  
+  <link href="../static/admin/js/temp/toastr.min.css" rel="stylesheet">
 
 </head>
 
@@ -192,35 +198,34 @@
             <!-- Nav Item - Alerts -->
             <li class="nav-item dropdown no-arrow mx-1">
               <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fas fa-bell fa-fw"></i>
-                <!-- Counter - Alerts -->
-                <span class="badge badge-danger badge-counter">3+</span>
+                <i class='fas fa-download fa-fw'></i>
               </a>
+              
               <!-- Dropdown - Alerts -->
               <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
                 <h6 class="dropdown-header">
-                  Alerts Center
+                  Get Reports
                 </h6>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/pdf">
                   <div class="mr-3">
                     <div class="icon-circle bg-primary">
                       <i class="fas fa-file-alt text-white"></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 12, 2019</div>
-                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                    <div class="small text-gray-500">PDF Format</div>
+                    <span class="font-weight-bold">A new month Employee report(PDF) is ready to download!</span>
                   </div>
                 </a>
-                <a class="dropdown-item d-flex align-items-center" href="#">
+                <a class="dropdown-item d-flex align-items-center" href="/admin/employee-datatable/export/html">
                   <div class="mr-3">
                     <div class="icon-circle bg-success">
-                      <i class="fas fa-donate text-white"></i>
+                      <i class='fas fa-file-code text-white' style='font-size:14px' ></i>
                     </div>
                   </div>
                   <div>
-                    <div class="small text-gray-500">December 7, 2019</div>
-                    $290.29 has been deposited into your account!
+                    <div class="small text-gray-500">HTML Format</div>
+                    A new month Employee report(HTML) is ready to download!
                   </div>
                 </a>
                 <a class="dropdown-item d-flex align-items-center" href="#">
@@ -299,7 +304,11 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                    <security:authorize access="isAuthenticated()">
+					    <security:authentication property="name" />
+					</security:authorize>                
+                </span>
                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
               </a>
               <!-- Dropdown - User Information -->
@@ -308,19 +317,13 @@
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
-                </a>
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
-                </a>
+                <form action="logout" method="post">
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                <a class="dropdown-item" href="/logout">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                   Logout
                 </a>
+                </form>                
               </div>
             </li>
 
@@ -469,9 +472,9 @@
               <div class="col-md-6 mb-4 mt-4">
                 <label for="validationTooltipDesignation">Branch</label>
                   <select class="custom-select" id="branch" name="branch"  disabled="disabled">
-                    <option value="">Choose...</option>
+                    <option value="${employee.branch}" selected>${employee.branch}</option>
                     <option value ="Kandy">Kandy</option>
-                    <option value="Colombo" selected>Colombo</option>
+                    <option value="Colombo">Colombo</option>
                     <option value="Kurunagala">Kurunagala</option>
                     <option value="Matara">Matara</option>
                   </select>
@@ -486,10 +489,10 @@
                 <div class="col-md-6 mb-4 mt-4">
                   <label for="validationTooltipDesignation">Department</label>
                     <select class="custom-select" id=department name=department  disabled="disabled">
-                      <option value="">Choose...</option>
+                      <option value="${employee.department}" selected>${employee.department}</option>
                       <option value ="Marketing">Marketing</option>
                       <option value="Accounting and Finance">Accounting and Finance</option>
-                      <option value="Human Resource Management" selected>Human Resource Management</option>
+                      <option value="Human Resource Management">Human Resource Management</option>
                       <option value="Research and Development">Research and Development</option>
                     </select>
                       <div class="invalid-tooltip">
@@ -610,6 +613,34 @@
   <script src="../static/admin/js/demo/datatables-demo.js"></script>
 
   <script src="../static/admin/js/employees_view.js"></script>
+  
+  <!-- Update Button custom scripts -->
+  <script src="../static/admin/js/temp/jquery-3.5.1.min.js"></script>
+  <script src="../static/admin/js/temp/toastr.min.js"></script>
+  
+  <script>
+  	$('#employee_cancel_edit').on('click', function(){
+  		toastr.options = {
+  			  "closeButton": true,
+  			  "debug": false,
+  			  "newestOnTop": false,
+  			  "progressBar": true,
+  			  "positionClass": "toast-top-center",
+  			  "preventDuplicates": false,
+  			  "onclick": null,
+  			  "showDuration": "300",
+  			  "hideDuration": "1000",
+  			  "timeOut": "5000",
+  			  "extendedTimeOut": "1000",
+  			  "showEasing": "swing",
+  			  "hideEasing": "linear",
+  			  "showMethod": "fadeIn",
+  			  "hideMethod": "fadeOut"
+  			}
+  			toastr["success"]("Employee Added Successful", "Successfully Added!")
+  	})
+  </script>
+  
 
 </body>
 </html>

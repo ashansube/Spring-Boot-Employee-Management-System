@@ -30,16 +30,15 @@ public class DepartmentController {
 	public String viewDepartment(@RequestParam int id, Model model) {
 		
 		Department department = service.getDepartmentById(id);
-		
+		service.deleteDepartmentById(id);
 		model.addAttribute("department", department);
-		
 		return "employee/view_department";
 	}
 	
 	@RequestMapping("/admin/deleteDepartment")
 	public String deleteDepartment(@RequestParam int id) {
 		
-		service.deleteDepartmentById(id);;
+		service.deleteDepartmentById(id);
 		return "redirect:/admin/employee-department-table";
 	}
 

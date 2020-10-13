@@ -31,9 +31,8 @@ public class BranchController {
 	public String viewBranch(@RequestParam int id, Model model) {
 		
 		Branch branch = service.getBranchById(id);
-		
-		model.addAttribute("branch", branch);
-		
+		service.deleteBranchById(id);
+		model.addAttribute("branch", branch);	
 		return "employee/view_branch";
 	}
 	
