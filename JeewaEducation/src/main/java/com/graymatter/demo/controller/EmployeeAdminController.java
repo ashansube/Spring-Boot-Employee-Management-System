@@ -66,6 +66,11 @@ public class EmployeeAdminController {
 		return "employee/employee_admin_dashboard";
 	}
 	
+	@GetMapping("/admin/employee-user-dashboard")
+	public String employeeUserDash() {
+		return "employee/employee_user_dashboard";
+	}
+	
 
 	@GetMapping("/admin/employee-addEmp")
 	public String employeeAdminAdd() {

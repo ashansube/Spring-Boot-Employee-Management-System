@@ -34,7 +34,7 @@ function editBranch() {
     document.getElementById('employee_branch_faxNo').removeAttribute('readonly');
 
  
-    document.getElementById('branch_view_btn_text').innerText = "Save";
+    document.getElementById('branch_view_btn_text').innerText = "Cancel";
 
     document.getElementById('branch_update_text').innerText = "Update Branch";
 

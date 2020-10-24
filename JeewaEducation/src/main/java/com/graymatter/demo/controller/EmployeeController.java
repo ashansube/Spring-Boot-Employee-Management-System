@@ -69,7 +69,7 @@ public class EmployeeController {
          response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/employee-dashboard"));                            
          }
          else if(role.contains("USER")) {
-             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/employee-datatable-users"));
+             response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin/employee-user-dashboard"));
          }
     }
 
